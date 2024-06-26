@@ -14,12 +14,14 @@
         font-size: 16px;
         font-weight: 600;
         color: #383838;
+        padding: 13px 6px;
       }
 
       .menu-item.active {
         background-color: #747599;
         border-radius: 8px;
-        padding: 13px 10px;
+        padding: 13px 6px;
+        margin: 3px 0px;
         color: white;
       }
 
@@ -224,7 +226,7 @@
 
         <!-- Main Content -->
         <main class="flex-1 p-4 md:p-8 transition-all duration-300">
-          <div class="md:p-8 rounded-lg bg-white">
+          <div id="ace-gpt" class="tab-content md:p-8 rounded-lg bg-white hidden">
             <h2 class="text-4xl md:text-5xl font-bold mb-4">
               Hi, I'm <span class="text-purple-950">ACE</span>.
             </h2>
@@ -273,42 +275,86 @@
                   </p>
                 </div>
               </div>
-            </div>
-            <div
-              class="flex justify-center items-center relative w-full md:w-3/5 mx-auto mt-8 md:mt-16 p-4 md:p-0"
-            >
-              <input
-                type="text"
-                placeholder="Click here to start typing..."
-                class="p-4 rounded-full shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 outline-none md:text-xl w-full md:flex-grow"
-              />
-              <a href="./aceCHAT.html">
-                <img
-                  src="./assets/img/right arrow.png"
-                  class="absolute right-8 md:bottom-4 bottom-8 h-6"
-                  alt="Right Arrow Icon"
+              <div
+                class="flex justify-center items-center relative w-full md:w-3/5 mx-auto mt-8 md:mt-16 p-4 md:p-0"
+              >
+                <input
+                  type="text"
+                  placeholder="Click here to start typing..."
+                  class="p-4 rounded-full shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 outline-none md:text-xl w-full md:flex-grow"
                 />
-              </a>
+                <a href="./aceCHAT.html">
+                  <img
+                    src="./assets/img/right arrow.png"
+                    class="absolute right-8 md:bottom-4 bottom-8 h-6"
+                    alt="Right Arrow Icon"
+                  />
+                </a>
+              </div>
             </div>
+          </div>
+          
+          <div id="campus-cart" class="tab-content hidden">
+            <h2 class="text-4xl font-bold mb-4">Campus Cart</h2>
+            <p>Content for Campus Cart...</p>
+          </div>
+          
+          <div id="workspace" class="tab-content hidden">
+            <h2 class="text-4xl font-bold mb-4">Workspace</h2>
+            <p>Content for Workspace...</p>
+          </div>
+          
+          <div id="student-hub" class="tab-content hidden">
+            <h2 class="text-4xl font-bold mb-4">Student Hub</h2>
+            <p>Content for Student Hub...</p>
+          </div>
+          
+          <div id="uni-link" class="tab-content hidden">
+            <h2 class="text-4xl font-bold mb-4">Uni-Link</h2>
+            <p>Content for Uni-Link...</p>
+          </div>
+          
+          <div id="easyfit" class="tab-content hidden">
+            <h2 class="text-4xl font-bold mb-4">EasyFit</h2>
+            <p>Content for EasyFit...</p>
+          </div>
+          
+          <div id="serenity" class="tab-content hidden">
+            <h2 class="text-4xl font-bold mb-4">Serenity</h2>
+            <p>Content for Serenity...</p>
+          </div>
+          
+          <div id="global-spotlight" class="tab-content hidden">
+            <h2 class="text-4xl font-bold mb-4">Global Spotlight</h2>
+            <p>Content for Global Spotlight...</p>
           </div>
         </main>
       </div>
     </div>
 
     <script>
-      function openTab(tabId, element) {
-        // Remove active class from all menu items
-        document
-          .querySelectorAll(".menu-item")
-          .forEach((item) => item.classList.remove("active"));
-        // Add active class to clicked menu item
-        element.classList.add("active");
-      }
-
       function toggleSidebar() {
-        const sidebar = document.getElementById("sidebar");
+        var sidebar = document.getElementById("sidebar");
         sidebar.classList.toggle("hidden");
       }
+
+      function openTab(tabName, el) {
+        var i, tabcontent, menuitem;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].classList.add("hidden");
+        }
+        menuitem = document.getElementsByClassName("menu-item");
+        for (i = 0; i < menuitem.length; i++) {
+          menuitem[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.remove("hidden");
+        el.classList.add("active");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        openTab("ace-gpt", document.querySelector(".menu-item"));
+      });
     </script>
   </body>
 </html>
