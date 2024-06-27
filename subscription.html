@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subscribe for Free</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="bg-white py-3">
+      <nav class="flex justify-between items-center mx-4 md:mx-8">
+        <div>
+          <img
+            src="./assets/img/ENSUITELogo.png"
+            width="198"
+            height="45"
+            alt="ENSUITE Logo"
+          />
+        </div>
+      </nav>
+    </header>
+    <section
+      class="flex items-center justify-center min-h-screen py-8 px-4 md:px-0"
+    >
+      <div class="bg-white rounded-lg p-6 md:p-12 w-full max-w-4xl">
+        <h2
+          class="text-2xl md:text-4xl font-bold mb-2 text-center md:text-left"
+        >
+          Subscribe for Free!
+        </h2>
+        <p
+          class="text-gray-600 text-base md:text-lg mb-9 text-center md:text-left"
+        >
+          Cancel at any time, even before you pay a penny – no strings attached!
+        </p>
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="w-full md:w-1/2 pr-0 md:pr-8">
+            <div class="mb-6">
+              <h3 class="text-lg font-bold mb-2">Membership Type</h3>
+              <div class="border rounded-lg p-4 mb-4">
+                <label class="flex items-center">
+                  <input
+                    type="radio"
+                    name="membership"
+                    class="form-radio text-purple-600"
+                    checked
+                  />
+                  <p class="ml-2 flex flex-col text-lg font-medium">
+                    Pay Monthly
+                    <span class="text-xs"> $0.00 / Month, 1 month free</span>
+                  </p>
+                </label>
+              </div>
+              <div class="border rounded-lg p-4 mb-8">
+                <label class="flex items-center">
+                  <input
+                    type="radio"
+                    name="membership"
+                    class="form-radio text-purple-600"
+                  />
+                  <p class="ml-2 flex flex-col text-lg font-medium">
+                    Pay Annually
+                    <span class="text-xs"
+                      >$0.85 / Month, 1 month free - save 15%</span
+                    >
+                  </p>
+                </label>
+              </div>
+            </div>
+
+            <div class="mb-6">
+              <h3 class="text-lg font-bold mb-2">Ambassador Code</h3>
+              <div class="flex">
+                <input
+                  type="text"
+                  class="form-input w-full py-2 px-3 border border-gray-300 custom-input focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  placeholder="Enter code here"
+                />
+                <button
+                  class="text-purple-900 text-lg font-bold px-4 border border-gray-300 custom-button focus:outline-none focus:ring-2 focus:ring-purple-600"
+                >
+                  Apply
+                </button>
+              </div>
+
+              <p class="mt-2 text-gray-600 text-base">
+                Using an ambassador code saves you
+                <span class="font-bold text-black">15%</span> on a monthly plan
+                and <span class="font-bold text-black">20%</span> off on an
+                annual plan
+              </p>
+            </div>
+          </div>
+          <div class="w-full md:w-1/2 mt-6 md:mt-0 pl-0 md:pl-8">
+            <img
+              src="./assets/img/Group 256.png"
+              alt="Subscription Benefits"
+              class="mx-auto md:mx-0"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

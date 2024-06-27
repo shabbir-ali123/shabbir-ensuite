@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENSUITE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .menu-item {
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: #383838;
+      }
+
+      .menu-item.active {
+        background-color: #747599;
+        border-radius: 8px;
+        padding: 13px 10px;
+        color: white;
+      }
+
+      .menu-item.active img {
+        filter: brightness(0) invert(1);
+      }
+
+      .close-btn {
+        display: none;
+      }
+
+      @media (max-width: 767px) {
+        .close-btn {
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgb(48, 79, 255);
+          border-radius: 50%;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+        }
+        #sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+        #sidebar.hidden {
+          transform: translateX(0);
+        }
+      }
+      @media (max-width: 640px) {
+        .step-line {
+          height: 2px;
+          width: 70px;
+        }
+
+        .step-indicator {
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="flex">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block"
+        style="width: 270px"
+      >
+        <img
+          src="./assets/img/ENSUITELogo.png"
+          width="198"
+          height="45"
+          alt="ENSUITE Logo"
+        />
+        <ul class="list-none p-0 py-16">
+          <!-- Sidebar Menu Items -->
+          <li
+            class="menu-item flex items-center justify-between pb-8"
+            onclick="openTab('ace-gpt', this)"
+          >
+            ACE GPT
+            <img
+              src="./assets/img/ACE GPT.png"
+              width="24px"
+              height="24px"
+              alt="ACE GPT Icon"
+            />
+          </li>
+          <li
+            class="menu-item flex items-center justify-between pb-8"
+            onclick="openTab('campus-cart', this)"
+          >
+            Campus Cart
+            <img
+              src="./assets/img/Campus.png"
+              width="24px"
+              height="24px"
+              alt="Campus Cart Icon"
+            />
+          </li>
+          <li
+            class="menu-item flex items-center justify-between pb-8"
+            onclick="openTab('workspace', this)"
+          >
+            Workspace
+            <img
+              src="./assets/img/Files Vector.png"
+              width="24px"
+              height="24px"
+              alt="Workspace Icon"
+            />
+          </li>
+          <li
+            class="menu-item flex items-center justify-between pb-8"
+            onclick="openTab('student-hub', this)"
+          >
+            Student Hub
+            <img
+              src="./assets/img/Student Vector.png"
+              width="24px"
+              height="24px"
+              alt="Student Hub Icon"
+            />
+          </li>
+          <li
+            class="menu-item flex items-center justify-between pb-8"
+            onclick="openTab('uni-link', this)"
+          >
+            Uni-Link
+            <img
+              src="./assets/img/Chat Vector.png"
+              width="24px"
+              height="24px"
+              alt="Uni-Link Icon"
+            />
+          </li>
+          <li
+            class="menu-item flex items-center justify-between pb-8"
+            onclick="openTab('easyfit', this)"
+          >
+            EasyFit
+            <img
+              src="./assets/img/Heart Vector.png"
+              width="24px"
+              height="24px"
+              alt="EasyFit Icon"
+            />
+          </li>
+          <li
+            class="menu-item flex items-center justify-between pb-8"
+            onclick="openTab('serenity', this)"
+          >
+            Serenity
+            <img
+              src="./assets/img/Mind Vector.png"
+              width="24px"
+              height="24px"
+              alt="Serenity Icon"
+            />
+          </li>
+          <li
+            class="menu-item flex items-center justify-between pb-8"
+            onclick="openTab('global-spotlight', this)"
+          >
+            Global Spotlight
+            <img
+              src="./assets/img/Vector.png"
+              width="24px"
+              height="24px"
+              alt="Global Spotlight Icon"
+            />
+          </li>
+        </ul>
+        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
+      </aside>
+
+      <!-- Main Content Area -->
+      <div class="flex-col md:flex-row w-full">
+        <!-- Header -->
+        <header class="bg-white shadow-md py-3 lg:mx-16">
+          <nav
+            class="flex justify-center md:justify-between items-center mx-0 md:mx-8"
+          >
+            <h2 class="text-left md:text-xl font-bold">Getting Started</h2>
+            <div class="flex gap-4 items-center">
+              <img
+                src="./assets/img/Bell Vector.png"
+                width="24px"
+                height="24px"
+                alt="Bell Icon"
+              />
+              <img
+                src="./assets/img/Profile Avatar.png"
+                width="44px"
+                height="44px"
+                alt="Profile"
+              />
+              <button
+                id="menu-btn"
+                class="md:hidden border-2 border-purple-500 text-white px-2 py-2 rounded-lg"
+                onclick="toggleSidebar()"
+              >
+                <img
+                  src="./assets/img/align-justify.svg"
+                  width="30px"
+                  height="30px"
+                  alt="Menu Icon"
+                />
+              </button>
+            </div>
+          </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-4 md:p-8 transition-all duration-300">
+          <div class="md:p-8 rounded-lg bg-white">
+            <h2 class="text-4xl md:text-5xl font-bold mb-4">
+              Hi, I'm <span class="text-purple-950">ACE</span>.
+            </h2>
+            <p class="text-2xl md:text-5xl text-gray-700 font-bold mb-4">
+              How can I help you today?
+            </p>
+            <div
+              class="flex items-center justify-center flex-col mt-10 md:mt-40"
+            >
+              <div class="flex md:flex gap-5 w-full md:w-3/6">
+                <p class="text-gray-700 mb-8 md:text-2xl font-medium">
+                  Ask me anything related to your school, its programs,
+                  resources, and much more...
+                </p>
+                <img
+                  class="w-16 h-16 md:w-24 md:h-24"
+                  src="./assets/img/ACE GPT Logo.png"
+                  alt="ACE GPT Logo"
+                />
+              </div>
+              <div
+                class="flex flex-col md:flex-row gap-9 items-center justify-center"
+              >
+                <div
+                  class="bg-purple-100 p-4 rounded-lg w-52 h-40 flex flex-col justify-around"
+                >
+                  <p class="font-bold">Advising</p>
+                  <p class="text-gray-600 font-bold">
+                    How do we access support resources?
+                  </p>
+                </div>
+                <div
+                  class="bg-purple-100 p-4 rounded-lg w-52 h-40 flex flex-col justify-around"
+                >
+                  <p class="font-bold">General</p>
+                  <p class="text-gray-600 font-bold">
+                    What are the library's hours today?
+                  </p>
+                </div>
+                <div
+                  class="bg-purple-100 p-4 rounded-lg w-52 h-40 flex flex-col justify-around"
+                >
+                  <p class="font-bold">Eligibility</p>
+                  <p class="text-gray-600 font-bold">
+                    Am I eligible for a program transfer?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex justify-center items-center relative w-full md:w-3/5 mx-auto mt-8 md:mt-16 p-4 md:p-0"
+            >
+              <input
+                type="text"
+                placeholder="Click here to start typing..."
+                class="p-4 rounded-full shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 outline-none md:text-xl w-full md:flex-grow"
+              />
+              <a href="./aceCHAT.html">
+                <img
+                  src="./assets/img/right arrow.png"
+                  class="absolute right-8 md:bottom-4 bottom-8 h-6"
+                  alt="Right Arrow Icon"
+                />
+              </a>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      function openTab(tabId, element) {
+        // Remove active class from all menu items
+        document
+          .querySelectorAll(".menu-item")
+          .forEach((item) => item.classList.remove("active"));
+        // Add active class to clicked menu item
+        element.classList.add("active");
+      }
+
+      function toggleSidebar() {
+        const sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

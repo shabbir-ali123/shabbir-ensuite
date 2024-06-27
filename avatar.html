@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENSUITE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hidden-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .menu-item {
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: #383838;
+      }
+
+      /* .menu-item:hover {
+            background-color: #747599;
+            border-radius: 8px;
+            padding: 16px 10px;
+            color: white;
+        } */
+
+      .menu-item.active {
+        background-color: #747599;
+        border-radius: 8px;
+        padding: 13px 10px;
+        color: white;
+      }
+
+      .menu-item.active img {
+        filter: brightness(0) invert(1);
+        /* Change SVG color to white */
+      }
+
+      .close-btn {
+        display: none;
+      }
+
+      @media (max-width: 767px) {
+        .close-btn {
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgb(48, 79, 255);
+          border-radius: 50%;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="flex h-screen">
+      <aside
+        id="sidebar"
+        class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block transition-transform transform -translate-x-full md:translate-x-0"
+        style="width: 270px"
+      >
+        <img
+          src="./assets/img/ENSUITELogo.png"
+          width="198"
+          height="45"
+          alt="ENSUITE Logo"
+        />
+        <ul class="list-none p-0 py-16">
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            ACE GPT
+            <img
+              src="./assets/img/ACE GPT.png"
+              width="24px"
+              height="24px"
+              alt="ACE GPT Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Campus Cart
+            <img
+              src="./assets/img/Campus.png"
+              width="24px"
+              height="24px"
+              alt="Campus Cart Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Workspace
+            <img
+              src="./assets/img/Files Vector.png"
+              width="24px"
+              height="24px"
+              alt="Workspace Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Student Hub
+            <img
+              src="./assets/img/Student Vector.png"
+              width="24px"
+              height="24px"
+              alt="Student Hub Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Uni-Link
+            <img
+              src="./assets/img/Chat Vector.png"
+              width="24px"
+              height="24px"
+              alt="Uni-Link Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            EasyFit
+            <img
+              src="./assets/img/Heart Vector.png"
+              width="24px"
+              height="24px"
+              alt="EasyFit Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Serenity
+            <img
+              src="./assets/img/Mind Vector.png"
+              width="24px"
+              height="24px"
+              alt="Serenity Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Global Spotlight
+            <img
+              src="./assets/img/Vector.png"
+              width="24px"
+              height="24px"
+              alt="Global Spotlight Icon"
+            />
+          </li>
+        </ul>
+      </aside>
+      <div class="flex-col md:flex-row h-full w-full">
+        <header class="bg-white shadow-md py-3 mx-16">
+          <nav class="flex justify-between items-center mx-4 md:mx-8">
+            <h2 class="text-left xl:text-xl xl:font-bold text-xs">
+              Getting Started
+            </h2>
+
+            <div class="flex gap-4 items-center justify-between">
+              <img
+                src="./assets/img/Bell Vector.png"
+                width="24px"
+                height="24px"
+                alt="Bell Icon"
+              />
+              <img
+                src="./assets/img/Profile Avatar.png"
+                width="44px"
+                height="44px"
+                alt="Profile"
+              />
+              <button
+                id="menu-btn"
+                class="md:hidden border-2 border-purple-500 text-white px-2 py-2 rounded-lg"
+                onclick="toggleSidebar()"
+              >
+                <img
+                  src="./assets/img/align-justify.svg"
+                  class="text-white"
+                  width="30px"
+                  height="30px"
+                  alt="Menu Icon"
+                />
+              </button>
+            </div>
+          </nav>
+        </header>
+
+        <!-- Main Content -->
+
+        <main
+          class="flex-1 bg-white m-10 rounded-lg md:p-5 md:px-10 transition-all duration-300 h-screen overflow-auto"
+        >
+          <!-- Menu Button for Mobile -->
+
+          <div class="tab-content" id="ace-gpt">
+            <h1 class="text-2xl font-bold mb-5">Select your Avatar</h1>
+            <p class="text-gray-600 md:mb-16 mb-8 text-xl font-medium">
+              Your avatar will be viewed by students who interact with you on
+              the platform
+            </p>
+            <div class="flex flex-col lg:flex-row items-center">
+              <div class="text-center flex-1 rounded-lg mb-5 md:mb-0">
+                <div class="flex flex-wrap md:gap-2">
+                  <!-- Placeholder avatars -->
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 6.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 1"
+                  />
+                  <img
+                    src="./assets/img/image 7.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 2"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+                  <img
+                    src="./assets/img/image 29.png"
+                    class="w-16 h-16 rounded-full cursor-pointer"
+                    alt="Avatar 3"
+                  />
+
+                  <!-- Add more avatars as needed -->
+                </div>
+              </div>
+              <div
+                class="w-full md:w-1/2 mt-6 md:mt-0 flex flex-col items-center justify-center"
+              >
+                <h2 class="text-lg font-bold mb-2 ml-12">Preview</h2>
+                <img
+                  src="./assets/img/animoji.png"
+                  class="w-80 h-80 mb-3"
+                  alt="Avatar Preview"
+                />
+                <div class="mt-5 flex items-center ml-6 gap-4">
+                  <a href="./home.html">
+                    <button
+                      class="bg-transparent text-black py-2 px-5 border rounded-lg border-purple-900"
+                    >
+                      Skip
+                    </button>
+                  </a>
+                  <a href="./home.html">
+                    <button
+                      class="bg-purple-900 text-white px-5 py-2 rounded-lg"
+                    >
+                      Confirm
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

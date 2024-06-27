@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .border-red-500 {
+        border-color: #f56565;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="bg-white py-3">
+      <nav class="flex justify-between items-center mx-8">
+        <div>
+          <img
+            src="./assets/img/ENSUITELogo.png"
+            width="198"
+            height="45"
+            alt="ENSUITE Logo"
+          />
+        </div>
+      </nav>
+    </header>
+    <section class="flex items-center justify-center h-screen">
+      <div class="w-full max-w-2xl">
+        <div class="bg-white px-8 pt-6 pb-8 mb-4">
+          <div class="mb-4 text-center">
+            <h2 class="text-3xl font-bold mb-2.5">Log in to Ensuite</h2>
+            <p class="text-center text-sm font-bold mb-8" id="signUpPrompt">
+              Don't have an account?
+              <a href="#" class="text-purple-900 border-blue-800 border-b-2"
+                >Sign up now</a
+              >
+            </p>
+            <p class="text-sm font-bold mb-8 hidden" id="noAccountError">
+              We can’t find an account with that email address.
+              <a href="#" class="text-purple-900 border-blue-800 border-b-2"
+                >Sign up now</a
+              >
+            </p>
+          </div>
+          <form id="loginForm">
+            <div class="mb-4">
+              <input
+                class="appearance-none bg-gray-200 border rounded-full w-full py-4 px-6 text-xl text-[#ADADAD] mb-4 leading-tight focus:outline-none focus:-outline"
+                style="background-color: #f3f3f3"
+                id="email"
+                type="email"
+                placeholder="Email"
+              />
+              <p class="text-red-500 text-xs italic hidden" id="emailError">
+                Please enter a valid email.
+              </p>
+            </div>
+            <div class="mb-6">
+              <div class="relative">
+                <input
+                  class="appearance-none bg-gray-100 border rounded-full w-full py-4 px-6 text-xl text-[#ADADAD] mb-4 leading-tight focus:outline-none focus:-outline pr-10"
+                  style="background-color: #f3f3f3"
+                  id="password"
+                  type="password"
+                  placeholder="Password"
+                />
+                <span
+                  class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                  onclick="togglePassword()"
+                >
+                  <i class="fas fa-eye text-gray-500" id="eyeIcon"></i>
+                </span>
+              </div>
+              <p class="text-red-500 text-xs italic hidden" id="passwordError">
+                The password you entered was incorrect
+              </p>
+              <p
+                style="color: #5e5e5e"
+                class="text-right font-bold hover:text-blue-800"
+              >
+                <a
+                  href="#"
+                  class="border-b border-black no-underline"
+                  style="color: #5e5e5e"
+                  >Forgot?</a
+                >
+              </p>
+            </div>
+            <div class="flex items-center justify-center">
+              <button
+                style="background-color: #4c00ac"
+                class="hover:bg-purple-500 text-white font-bold p-3 px-8 rounded-full focus:outline-none focus:shadow-outline"
+                type="button"
+                onclick="validateForm()"
+              >
+                Login
+              </button>
+            </div>
+            <p
+              style="color: #8d8d8d"
+              class="mt-4 text-center text-sm font-bold"
+            >
+              Learn more about our ambassador program
+              <a style="color: #3a1569" href="#" class="border-b-2 border-black"
+                >here</a
+              >.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function validateForm() {
+        var email = document.getElementById("email");
+        var password = document.getElementById("password");
+        var emailError = document.getElementById("emailError");
+        var passwordError = document.getElementById("passwordError");
+        var noAccountError = document.getElementById("noAccountError");
+        var signUpPrompt = document.getElementById("signUpPrompt");
+
+        emailError.classList.add("hidden");
+        passwordError.classList.add("hidden");
+        noAccountError.classList.add("hidden");
+        signUpPrompt.classList.remove("hidden");
+        email.classList.remove("border-red-500");
+        password.classList.remove("border-red-500");
+
+        var emailValid = email.value.includes("@");
+        if (!emailValid) {
+          emailError.classList.remove("hidden");
+          email.classList.add("border-red-500");
+        }
+
+        var passwordValid = password.value.trim() !== "";
+        if (!passwordValid) {
+          passwordError.classList.remove("hidden");
+          password.classList.add("border-red-500");
+        }
+
+        if (!emailValid || !passwordValid) {
+          return false;
+        }
+
+        // Simulate checking for an existing account
+        var accountExists = false; // Simulate an account not existing
+
+        if (!accountExists) {
+          noAccountError.classList.remove("hidden");
+          signUpPrompt.classList.add("hidden");
+          email.classList.add("border-red-500");
+          return false;
+        }
+
+        console.log("Email:", email.value);
+        console.log("Password:", password.value);
+      }
+
+      function togglePassword() {
+        var password = document.getElementById("password");
+        var eyeIcon = document.getElementById("eyeIcon");
+        if (password.type === "password") {
+          password.type = "text";
+          eyeIcon.classList.remove("fa-eye");
+          eyeIcon.classList.add("fa-eye-slash");
+        } else {
+          password.type = "password";
+          eyeIcon.classList.remove("fa-eye-slash");
+          eyeIcon.classList.add("fa-eye");
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENSUITE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .hidden-sidebar {
+        transform: translateX(-100%);
+      }
+
+      .menu-item {
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        color: #383838;
+      }
+
+      /* .menu-item:hover {
+            background-color: #747599;
+            border-radius: 8px;
+            padding: 16px 10px;
+            color: white;
+        } */
+
+      .menu-item.active {
+        background-color: #747599;
+        border-radius: 8px;
+        padding: 13px 10px;
+        color: white;
+      }
+
+      .menu-item.active img {
+        filter: brightness(0) invert(1);
+        /* Change SVG color to white */
+      }
+
+      .close-btn {
+        display: none;
+      }
+
+      @media (max-width: 767px) {
+        .close-btn {
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgb(48, 79, 255);
+          border-radius: 50%;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="flex">
+      <aside
+        id="sidebar"
+        class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block transition-transform transform -translate-x-full md:translate-x-0"
+        style="width: 270px"
+      >
+        <img
+          src="./assets/img/ENSUITELogo.png"
+          width="198"
+          height="45"
+          alt="ENSUITE Logo"
+        />
+        <ul class="list-none p-0 py-16">
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            ACE GPT
+            <img
+              src="./assets/img/ACE GPT.png"
+              width="24px"
+              height="24px"
+              alt="ACE GPT Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Campus Cart
+            <img
+              src="./assets/img/Campus.png"
+              width="24px"
+              height="24px"
+              alt="Campus Cart Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Workspace
+            <img
+              src="./assets/img/Files Vector.png"
+              width="24px"
+              height="24px"
+              alt="Workspace Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Student Hub
+            <img
+              src="./assets/img/Student Vector.png"
+              width="24px"
+              height="24px"
+              alt="Student Hub Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Uni-Link
+            <img
+              src="./assets/img/Chat Vector.png"
+              width="24px"
+              height="24px"
+              alt="Uni-Link Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            EasyFit
+            <img
+              src="./assets/img/Heart Vector.png"
+              width="24px"
+              height="24px"
+              alt="EasyFit Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Serenity
+            <img
+              src="./assets/img/Mind Vector.png"
+              width="24px"
+              height="24px"
+              alt="Serenity Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Global Spotlight
+            <img
+              src="./assets/img/Vector.png"
+              width="24px"
+              height="24px"
+              alt="Global Spotlight Icon"
+            />
+          </li>
+        </ul>
+      </aside>
+      <div class="flex-col md:flex-row h-full w-full">
+        <header class="bg-white shadow-md py-3 md:mx-16">
+          <nav class="flex justify-between items-center md:mx-4 md:mx-8">
+            <h2 class="text-left xl:text-xl xl:font-bold text-xs">
+              Getting Started
+            </h2>
+
+            <div class="flex gap-4 items-center justify-between">
+              <img
+                src="./assets/img/Bell Vector.png"
+                width="24px"
+                height="24px"
+                alt="Bell Icon"
+              />
+              <img
+                src="./assets/img/Profile Avatar.png"
+                width="44px"
+                height="44px"
+                alt="Profile"
+              />
+              <button
+                id="menu-btn"
+                class="md:hidden border-2 border-purple-500 text-white px-2 py-2 rounded-lg"
+                onclick="toggleSidebar()"
+              >
+                <img
+                  src="./assets/img/align-justify.svg"
+                  class="text-white"
+                  width="30px"
+                  height="30px"
+                  alt="Menu Icon"
+                />
+              </button>
+            </div>
+          </nav>
+        </header>
+
+        <!-- Main Content -->
+
+        <main
+          class="flex-1 bg-white m-10 rounded-lg xl:p-5 xl:px-10 transition-all duration-300"
+        >
+          <div class="tab-content" id="ace-gpt">
+            <h1 class="font-bold mb-5 xl:text-4xl md:text-lg">
+              Welcome to ENSUITE!
+            </h1>
+            <p
+              style="color: #787878"
+              class="xl:text-lg md:text-left sm:text-center pb-7"
+            >
+              Before you can continue, there are a few things you need to set up
+            </p>
+
+            <!-- Setup Steps -->
+            <div
+              class="flex flex-col md:flex-row gap-8 justify-center items-center"
+            >
+              <div
+                class="text-center flex-1 mx-2 border border-gray-300 rounded-lg p-5 mb-5 md:mb-0 ml-0"
+              >
+                <div class="flex justify-center">
+                  <img
+                    src="./assets/img/animoji.png"
+                    class="w-48 h-48 mb-3 mt-6"
+                    alt="Avatar Placeholder"
+                  />
+                </div>
+                <h2 class="text-xl font-bold md:text-left xl:text-left mb-1">
+                  Set up your Avatar
+                </h2>
+                <p
+                  style="color: #858585"
+                  class="xl:text-lg sm:text-center md:text-left border-b border-gray-300 pb-7"
+                >
+                  Your avatar will appear next to your name and seen by people
+                  that click your profile
+                </p>
+                <div class="mt-5 flex items-center justify-end gap-[25px]">
+                  <button
+                    style="color: #acacac"
+                    class="xl:text-lg xl:font-bold sm:text-xs"
+                  >
+                    Incomplete
+                  </button>
+                  <a href="/ensuite/avatar.html">
+                    <button
+                      style="background-color: #3a1569; color: #f3f3f3"
+                      class="xl:text-lg text-white px-5 py-2 rounded-lg ml-3 xl:font-bold sm:text-xs"
+                    >
+                      Continue
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="text-center flex-1 mx-2 border border-gray-300 rounded-lg p-5 mb-5 md:mb-0"
+              >
+                <div class="flex justify-center">
+                  <img
+                    src="./assets/img/second.png"
+                    class="h-48 mb-3 mt-6"
+                    alt="Info Placeholder"
+                  />
+                </div>
+                <h2 class="font-bold text-xl md:text-left sm:text-center mb-1">
+                  Tell us about yourself
+                </h2>
+                <p
+                  style="color: #858585"
+                  class="xl:text-lg sm:text-center md:text-left border-b border-gray-300 pb-7"
+                >
+                  This will appear when users view your profile or connect with
+                  you on Uni-Link
+                </p>
+                <div class="mt-5 flex items-center justify-end">
+                  <button
+                    style="color: #acacac"
+                    class="xl:text-lg xl:font-bold sm:text-xs"
+                  >
+                    Incomplete
+                  </button>
+                  <a href="./about.html">
+                    <button
+                      style="background-color: #3a1569; color: #f3f3f3"
+                      class="xl:text-lg text-white px-5 py-2 rounded-lg ml-3 xl:font-bold sm:text-xs"
+                    >
+                      Continue
+                    </button>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="text-center flex-1 mx-2 border border-gray-300 rounded-lg p-5"
+              >
+                <div class="flex justify-center">
+                  <img
+                    src="./assets/img/Teamwork.png"
+                    class="w-48 h-48 mb-3 mt-6"
+                    alt="Workspace Placeholder"
+                  />
+                </div>
+                <h2 class="font-bold text-xl md:text-left sm:text-center mb-1">
+                  Create your first Workspace
+                </h2>
+                <p
+                  style="color: #858585"
+                  class="xl:text-lg sm:text-center md:text-left border-b border-gray-300 pb-7"
+                >
+                  Workspace is an amazing feature that allows you to build a
+                  community around a specific topic.
+                </p>
+                <div class="mt-5 flex items-center justify-end gap-[25px]">
+                  <button
+                    style="color: #acacac"
+                    class="xl:text-lg xl:font-bold sm:text-xs"
+                  >
+                    Optional
+                  </button>
+                  <a href="./page0WS.html">
+                    <button
+                      style="background-color: #3a1569; color: #f3f3f3"
+                      class="xl:text-lg text-white px-5 py-2 rounded-lg ml-3 xl:font-bold sm:text-xs"
+                    >
+                      Continue
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center" style="font-size: 22px">
+              <p class="font-bold xl:mt-24 mt-12">
+                You are almost ready!
+                <span style="color: #9c27b0">3 steps remaining</span>
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
