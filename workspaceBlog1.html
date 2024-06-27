@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENSUITE</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .menu-item {
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 13px 6px;
+      }
+
+      .menu-item.active {
+        background-color: #f2f2f2;
+        border-radius: 8px;
+        padding: 13px 6px;
+        margin: 3px 0px;
+        color: black;
+      }
+
+      .close-btn {
+        display: none;
+      }
+
+      @media (max-width: 767px) {
+        .close-btn {
+          display: block;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          height: 30px;
+          width: 30px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: rgb(48, 79, 255);
+          border-radius: 50%;
+          border: none;
+          font-size: 24px;
+          cursor: pointer;
+        }
+
+        #sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        #sidebar.hidden {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <!-- Sidebar -->
+      <aside
+        id="sidebar"
+        class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block transition-transform transform -translate-x-full md:translate-x-0"
+        style="width: 270px"
+      >
+        <img
+          src="./assets/img/ENSUITELogo.png"
+          width="198"
+          height="45"
+          alt="ENSUITE Logo"
+        />
+        <ul class="list-none p-0 py-16">
+          <a href="./aceGPT.html">
+            <li
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+              onclick="openTab('ace-gpt', this)"
+            >
+              ACE GPT
+              <img
+                src="./assets/img/ACE GPT.png"
+                width="24px"
+                height="24px"
+                alt="ACE GPT Icon"
+              />
+            </li>
+          </a>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Campus Cart
+            <img
+              src="./assets/img/Campus.png"
+              width="24px"
+              height="24px"
+              alt="Campus Cart Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Workspace
+            <img
+              src="./assets/img/Files Vector.png"
+              width="24px"
+              height="24px"
+              alt="Workspace Icon"
+            />
+          </li>
+          <a href="./studyBuddyAI.html">
+            <li
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+            >
+              Student Hub
+              <img
+                src="./assets/img/Student Vector.png"
+                width="24px"
+                height="24px"
+                alt="Student Hub Icon"
+              />
+            </li>
+          </a>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Uni-Link
+            <img
+              src="./assets/img/Chat Vector.png"
+              width="24px"
+              height="24px"
+              alt="Uni-Link Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            EasyFit
+            <img
+              src="./assets/img/Heart Vector.png"
+              width="24px"
+              height="24px"
+              alt="EasyFit Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Serenity
+            <img
+              src="./assets/img/Mind Vector.png"
+              width="24px"
+              height="24px"
+              alt="Serenity Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Global Spotlight
+            <img
+              src="./assets/img/Vector.png"
+              width="24px"
+              height="24px"
+              alt="Global Spotlight Icon"
+            />
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Content Area -->
+      <div class="flex-col md:flex-row h-full w-full">
+        <!-- Header -->
+        <header class="bg-white shadow-md py-3 md:mx-16">
+          <nav class="flex justify-between items-center mx-4 md:mx-8">
+            <div class="flex items-center flex-col">
+              <a href="#" class="font-bold md:text-lg flex gap-4 items-center">
+                <img src="./assets/img/Group-left.png" alt="" />Muscle Makers</a
+              >
+            </div>
+            <div class="flex items-center">
+              <ul
+                class="flex ml-10 space-x-8 font-bold hidden lg:flex text no-underline"
+                style="color: #bcbcbc"
+              >
+                <li>
+                  <a href="#" class="hover:text-purple-600">Dashboard</a>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="border-b-2 border-purple-600"
+                    style="color: #3a1569"
+                    >Blog</a
+                  >
+                </li>
+                <li>
+                  <a href="#" class="hover:text-purple-600">Calendar</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-purple-600">Files</a>
+                </li>
+                <li>
+                  <a href="#" class="hover:text-purple-600">Configuration</a>
+                </li>
+              </ul>
+            </div>
+            <div class="flex gap-4 items-center">
+              <img
+                src="./assets/img/Bell Vector.png"
+                width="24px"
+                height="24px"
+                alt="Bell Icon"
+              />
+              <img
+                src="./assets/img/Profile Avatar.png"
+                width="44px"
+                height="44px"
+                alt="Profile"
+              />
+              <button
+                id="menu-btn"
+                class="md:hidden border-2 border-purple-500 text-white px-2 py-2 rounded-lg"
+                onclick="toggleSidebar()"
+              >
+                <img
+                  src="./assets/img/align-justify.svg"
+                  width="30px"
+                  height="30px"
+                  alt="Menu Icon"
+                />
+              </button>
+            </div>
+          </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main
+          class="transition-all duration-300 md:col-span-3 p-4 lg:p-14 lg:flex xl:w-11/12 xl:gap-16"
+        >
+          <div class="flex flex-col xl:w-2/5 gap-4">
+            <h2
+              class="text-2xl xl:text-4xl font-medium mb-10 text-center lg:text-left"
+            >
+              Muscle Makers' Blog
+            </h2>
+            <p
+              class="border-b-2 border-gray-200 md:font-bold"
+              style="color: #949494"
+            >
+              Welcome to our blog! Post any workout updates, tips, or
+              fitness-related experiences to share with the community. Engage
+              with fellow members through comments and likes. Let's inspire and
+              motivate each other on our fitness journeys!
+            </p>
+            <button
+              class="custom-button text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 flex items-center gap-2 md:w-2/5 md:font-bold"
+              style="background-color: #3a1569"
+            >
+              Create Post
+              <img src="./assets/img/plus-icon.png" alt="plus icon" />
+            </button>
+          </div>
+          <div class="md:w-full md:flex md:flex-col">
+            <div class="flex flex-col md:w-full m-auto">
+              <h1 class="text-xl font-bold py-3" style="color: #aaaaaa">
+                Recent
+              </h1>
+              <!-- Blog Posts -->
+              <div class="space-y-6">
+                <!-- card 1 -->
+                <div
+                  class="p-4 rounded-lg shadow-md"
+                  style="background-color: #fbfbfb"
+                >
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="md:text-xl font-semibold">
+                        Pre-Workout Holy Grail
+                      </h3>
+                      <p class="text-xs font-bold" style="color: #787878">
+                        June 12, 2024
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                      <img src="./assets/img/Group 618.png" alt="" />
+                      <img src="./assets/img/heart-Vector.png" alt="" />
+                    </div>
+                  </div>
+                  <p class="font-medium mt-6">
+                    Hey guys, just have to share my go-to pre-workout snack:
+                    banana with peanut butter and a handful of almonds. It's the
+                    perfect blend of carbs and protein to fuel my workouts. What
+                    do you guys have before hitting the gym?
+                  </p>
+                </div>
+
+                <!-- card 2 -->
+                <div
+                  class="p-4 rounded-lg shadow-md"
+                  style="background-color: #fbfbfb"
+                >
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="md:text-xl font-semibold">
+                        Reaching New Heights
+                      </h3>
+                      <p class="text-xs font-bold" style="color: #787878">
+                        June 12, 2024
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                      <img src="./assets/img/Group 618.png" alt="" />
+                      <img src="./assets/img/heart-Vector.png" alt="" />
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <p class="font-medium mt-6 xl:w-4/5">
+                      I'm super excited to share that I've achieved a new
+                      personal record in deadlifting! This milestone comes after
+                      months of focused training, consistent effort, and a lot
+                      of support from this incredible community. <br />
+                      <br />
+                      The journey to this PR was challenging but deeply
+                      rewarding. Every workout, every lift counted, pushing me
+                      closer to this goal. And today, I can proudly say I've
+                      lifted my highest weight ever!
+                    </p>
+                    <div>
+                      <img src="./assets/img/image 253.png" alt="" />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- card 3 -->
+                <div
+                  class="p-4 rounded-lg shadow-md"
+                  style="background-color: #fbfbfb"
+                >
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <h3 class="md:text-xl font-semibold">
+                        Pre-Workout Holy Grail
+                      </h3>
+                      <p class="text-xs font-bold" style="color: #787878">
+                        June 12, 2024
+                      </p>
+                    </div>
+                    <div class="flex items-center gap-4">
+                      <img src="./assets/img/Group 618.png" alt="" />
+                      <img src="./assets/img/heart-Vector.png" alt="" />
+                    </div>
+                  </div>
+                  <p class="font-medium mt-6">
+                    Hey guys, just have to share my go-to pre-workout snack:
+                    banana with peanut butter and a handful of almonds. It’s the
+                    perfect blend of carbs and protein to fuel my workouts. What
+                    do you guys have before hitting the gym?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      // Toggle sidebar visibility on mobile
+      function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>
