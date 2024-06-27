@@ -9,42 +9,23 @@
       rel="stylesheet"
     />
     <style>
-      .hidden-sidebar {
-        transform: translateX(-100%);
-      }
-
       .menu-item {
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
-        color: #383838;
+        padding: 13px 6px;
       }
 
       .menu-item.active {
-        background-color: #747599;
+        background-color: #f2f2f2;
         border-radius: 8px;
-        padding: 13px 10px;
-        color: white;
-      }
-
-      .menu-item.active img {
-        filter: brightness(0) invert(1);
-        /* Change SVG color to white */
+        padding: 13px 6px;
+        margin: 3px 0px;
+        color: black;
       }
 
       .close-btn {
         display: none;
-      }
-      @media (max-width: 640px) {
-        .step-line {
-          height: 2px;
-          width: 70px;
-          overflow: hidden;
-        }
-
-        .step-indicator {
-          margin-bottom: 1rem;
-        }
       }
 
       @media (max-width: 767px) {
@@ -64,6 +45,24 @@
           font-size: 24px;
           cursor: pointer;
         }
+        #sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+        #sidebar.hidden {
+          transform: translateX(0);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .step-line {
+          height: 2px;
+          width: 70px;
+        }
+
+        .step-indicator {
+          margin-bottom: 1rem;
+        }
       }
     </style>
   </head>
@@ -82,17 +81,20 @@
           alt="ENSUITE Logo"
         />
         <ul class="list-none p-0 py-16">
-          <li
-            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
-          >
-            ACE GPT
-            <img
-              src="./assets/img/ACE GPT.png"
-              width="24px"
-              height="24px"
-              alt="ACE GPT Icon"
-            />
-          </li>
+          <a href="./aceGPT.html">
+            <li
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+              onclick="openTab('ace-gpt', this)"
+            >
+              ACE GPT
+              <img
+                src="./assets/img/ACE GPT.png"
+                width="24px"
+                height="24px"
+                alt="ACE GPT Icon"
+              />
+            </li>
+          </a>
           <li
             class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
@@ -115,17 +117,19 @@
               alt="Workspace Icon"
             />
           </li>
-          <li
-            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
-          >
-            Student Hub
-            <img
-              src="./assets/img/Student Vector.png"
-              width="24px"
-              height="24px"
-              alt="Student Hub Icon"
-            />
-          </li>
+          <a href="./studyBuddyAI.html">
+            <li
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+            >
+              Student Hub
+              <img
+                src="./assets/img/Student Vector.png"
+                width="24px"
+                height="24px"
+                alt="Student Hub Icon"
+              />
+            </li>
+          </a>
           <li
             class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
@@ -332,7 +336,7 @@
                     </div>
                   </form>
                   <div class="flex justify-end gap-2 mt-6">
-                    <a href="./page0WS.html">
+                    <a href="/workspaceInCreation1.html">
                       <button
                         type="submit"
                         class="border py-2.5 px-5 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
@@ -346,7 +350,7 @@
                         </div>
                       </button>
                     </a>
-                    <a href="./page3WS.html">
+                    <a href="./Workspacecreation3.html">
                       <button
                         type="submit"
                         class="bg-purple-600 text-white px-5 py-2.5 rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"

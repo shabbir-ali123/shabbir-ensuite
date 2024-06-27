@@ -8,23 +8,21 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
+
     <style>
       .menu-item {
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
-        color: #383838;
+        padding: 13px 6px;
       }
 
       .menu-item.active {
-        background-color: #747599;
+        background-color: #f2f2f2;
         border-radius: 8px;
-        padding: 13px 10px;
-        color: white;
-      }
-
-      .menu-item.active img {
-        filter: brightness(0) invert(1);
+        padding: 13px 6px;
+        margin: 3px 0px;
+        color: black;
       }
 
       .close-btn {
@@ -56,6 +54,7 @@
           transform: translateX(0);
         }
       }
+
       @media (max-width: 640px) {
         .step-line {
           height: 2px;
@@ -74,7 +73,7 @@
       <!-- Sidebar -->
       <aside
         id="sidebar"
-        class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block"
+        class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block transition-transform transform -translate-x-full md:translate-x-0"
         style="width: 270px"
       >
         <img
@@ -84,22 +83,22 @@
           alt="ENSUITE Logo"
         />
         <ul class="list-none p-0 py-16">
-          <!-- Sidebar Menu Items -->
+          <a href="./aceGPT.html">
+            <li
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+              onclick="openTab('ace-gpt', this)"
+            >
+              ACE GPT
+              <img
+                src="./assets/img/ACE GPT.png"
+                width="24px"
+                height="24px"
+                alt="ACE GPT Icon"
+              />
+            </li>
+          </a>
           <li
-            class="menu-item flex items-center justify-between pb-8"
-            onclick="openTab('ace-gpt', this)"
-          >
-            ACE GPT
-            <img
-              src="./assets/img/ACE GPT.png"
-              width="24px"
-              height="24px"
-              alt="ACE GPT Icon"
-            />
-          </li>
-          <li
-            class="menu-item flex items-center justify-between pb-8"
-            onclick="openTab('campus-cart', this)"
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
             Campus Cart
             <img
@@ -110,8 +109,7 @@
             />
           </li>
           <li
-            class="menu-item flex items-center justify-between pb-8"
-            onclick="openTab('workspace', this)"
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
             Workspace
             <img
@@ -121,21 +119,21 @@
               alt="Workspace Icon"
             />
           </li>
+          <a href="./studyBuddyAI.html">
+            <li
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+            >
+              Student Hub
+              <img
+                src="./assets/img/Student Vector.png"
+                width="24px"
+                height="24px"
+                alt="Student Hub Icon"
+              />
+            </li>
+          </a>
           <li
-            class="menu-item flex items-center justify-between pb-8"
-            onclick="openTab('student-hub', this)"
-          >
-            Student Hub
-            <img
-              src="./assets/img/Student Vector.png"
-              width="24px"
-              height="24px"
-              alt="Student Hub Icon"
-            />
-          </li>
-          <li
-            class="menu-item flex items-center justify-between pb-8"
-            onclick="openTab('uni-link', this)"
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
             Uni-Link
             <img
@@ -146,8 +144,7 @@
             />
           </li>
           <li
-            class="menu-item flex items-center justify-between pb-8"
-            onclick="openTab('easyfit', this)"
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
             EasyFit
             <img
@@ -158,8 +155,7 @@
             />
           </li>
           <li
-            class="menu-item flex items-center justify-between pb-8"
-            onclick="openTab('serenity', this)"
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
             Serenity
             <img
@@ -170,8 +166,7 @@
             />
           </li>
           <li
-            class="menu-item flex items-center justify-between pb-8"
-            onclick="openTab('global-spotlight', this)"
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
           >
             Global Spotlight
             <img
@@ -182,7 +177,6 @@
             />
           </li>
         </ul>
-        <button class="close-btn" onclick="toggleSidebar()">&times;</button>
       </aside>
 
       <!-- Main Content Area -->
@@ -300,7 +294,7 @@
                       ></textarea>
                     </div>
                     <div class="flex justify-end">
-                      <a href="./page2WS.html">
+                      <a href="/workspaceCreation2 .html">
                         <button
                           type="button"
                           class="bg-blue-800 text-white px-4 py-2 gap-2 flex items-center rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600"
