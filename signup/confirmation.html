@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Account</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      @media (max-width: 640px) {
+        .step-line {
+          height: 2px;
+          width: 70px;
+        }
+
+        .step-indicator {
+          margin-bottom: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- verifaction code page  -->
+
+    <main id="verification-code">
+      <header class="bg-white py-3">
+        <nav class="flex justify-between items-center mx-4 md:mx-8">
+          <div>
+            <img
+              src="../assets/img/ENSUITELogo.png"
+              width="198"
+              height="45"
+              alt="ENSUITE Logo"
+            />
+          </div>
+        </nav>
+      </header>
+
+      <section class="flex items-center justify-center px-4">
+        <div class="p-4 w-full">
+          <div class="flex flex-col md:w-3/6 m-auto">
+            <div
+              class="flex flex-col md:flex-row items-center justify-evenly sm:items-center"
+            >
+              <div class="flex flex-row md:flex-col items-center mb-8 md:mb-0">
+                <button
+                  style="background-color: #ba62ff"
+                  class="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold border-none"
+                >
+                  1
+                </button>
+
+                <div
+                  style="background-color: #ba62ff"
+                  class="step-line md:block h-28 w-0.5 b mx-auto"
+                ></div>
+                <div class="hidden md:block"></div>
+
+                <button
+                  style="background-color: #ba62ff"
+                  class="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold border-none"
+                  onclick="showAccountInfo()"
+                >
+                  2
+                </button>
+
+                <div
+                  style="background-color: #ba62ff"
+                  class="step-line md:block h-28 w-0.5 mx-auto"
+                ></div>
+                <div class="hidden md:block h-0.5 w-16"></div>
+
+                <button
+                  style="background-color: #462472"
+                  class="w-10 h-10 text-white rounded-full flex items-center justify-center font-bold border-none"
+                >
+                  3
+                </button>
+              </div>
+              <div class="mt-4 md:mt-0">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">
+                  Verify Account
+                </h2>
+                <p style="color: #858585" class="mb-9 text-base md:text-lg">
+                  Please enter the 4-digit code sent to your email
+                </p>
+                <p class="text-lg font-medium mb-4">4-Digit Code</p>
+                <form
+                  class="w-full flex"
+                  onsubmit="event.preventDefault(); showWelcomePage();"
+                >
+                  <div>
+                    <div class="flex space-x-2">
+                      <input
+                        type="text"
+                        maxlength="1"
+                        class="w-16 h-20 text-center border text-xl shadow-md md:text-2xl border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 mb-12"
+                      />
+                      <input
+                        type="text"
+                        maxlength="1"
+                        class="w-16 h-20 text-center border text-xl shadow-md md:text-2xl border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 mb-12"
+                      />
+                      <input
+                        type="text"
+                        maxlength="1"
+                        class="w-16 h-20 text-center border text-xl shadow-md md:text-2xl border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 mb-12"
+                      />
+                      <input
+                        type="text"
+                        maxlength="1"
+                        class="w-16 h-20 text-center border text-xl shadow-md md:text-2xl border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-600 mb-12"
+                      />
+                    </div>
+                    <div class="mt-6">
+                      <a
+                        href="./subscription.html"
+                        style="background-color: #3a1569"
+                        type="submit"
+                        class="bg-purple-900 text-white py-2 px-7 text-lg rounded-lg focus:outline-none focus:ring-2"
+                      >
+                        Verify
+                      </a>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
