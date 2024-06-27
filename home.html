@@ -8,35 +8,21 @@
       href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
       rel="stylesheet"
     />
-    <style>
-      .hidden-sidebar {
-        transform: translateX(-100%);
-      }
 
+    <style>
       .menu-item {
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
-        color: #383838;
+        padding: 13px 6px;
       }
-
-      /* .menu-item:hover {
-            background-color: #747599;
-            border-radius: 8px;
-            padding: 16px 10px;
-            color: white;
-        } */
 
       .menu-item.active {
-        background-color: #747599;
+        background-color: #f2f2f2;
         border-radius: 8px;
-        padding: 13px 10px;
-        color: white;
-      }
-
-      .menu-item.active img {
-        filter: brightness(0) invert(1);
-        /* Change SVG color to white */
+        padding: 13px 6px;
+        margin: 3px 0px;
+        color: black;
       }
 
       .close-btn {
@@ -60,6 +46,23 @@
           font-size: 24px;
           cursor: pointer;
         }
+        #sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+        #sidebar.hidden {
+          transform: translateX(0);
+        }
+      }
+      @media (max-width: 640px) {
+        .step-line {
+          height: 2px;
+          width: 70px;
+        }
+
+        .step-indicator {
+          margin-bottom: 1rem;
+        }
       }
     </style>
   </head>
@@ -80,6 +83,7 @@
         <ul class="list-none p-0 py-16">
           <li
             class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+            onclick="openTab('ace-gpt', this)"
           >
             ACE GPT
             <img
@@ -348,5 +352,30 @@
         </main>
       </div>
     </div>
+
+    <script>
+      function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("hidden");
+      }
+
+      function openTab(tabName, el) {
+        var i, tabcontent, menuitem;
+        tabcontent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].classList.add("hidden");
+        }
+        menuitem = document.getElementsByClassName("menu-item");
+        for (i = 0; i < menuitem.length; i++) {
+          menuitem[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.remove("hidden");
+        el.classList.add("active");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        openTab("ace-gpt", document.querySelector(".menu-item"));
+      });
+    </script>
   </body>
 </html>

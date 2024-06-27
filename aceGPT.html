@@ -13,20 +13,15 @@
         cursor: pointer;
         font-size: 16px;
         font-weight: 600;
-        color: #383838;
         padding: 13px 6px;
       }
 
       .menu-item.active {
-        background-color: #747599;
+        background-color: #f2f2f2;
         border-radius: 8px;
         padding: 13px 6px;
         margin: 3px 0px;
-        color: white;
-      }
-
-      .menu-item.active img {
-        filter: brightness(0) invert(1);
+        color: black;
       }
 
       .close-btn {
@@ -226,7 +221,10 @@
 
         <!-- Main Content -->
         <main class="flex-1 p-4 md:p-8 transition-all duration-300">
-          <div id="ace-gpt" class="tab-content md:p-8 rounded-lg bg-white hidden">
+          <div
+            id="ace-gpt"
+            class="tab-content md:p-8 rounded-lg bg-white hidden"
+          >
             <h2 class="text-4xl md:text-5xl font-bold mb-4">
               Hi, I'm <span class="text-purple-950">ACE</span>.
             </h2>
@@ -236,14 +234,16 @@
             <div
               class="flex items-center justify-center flex-col mt-10 md:mt-40"
             >
-              <div class="flex md:flex gap-5 w-full md:w-3/6">
-                <p class="text-gray-700 mb-8 md:text-2xl font-medium">
+              <div class="flex md:flex gap-5 md:w-full lg:w-3/6">
+                <p class="text-gray-700 mb-8 lg:text-2xl font-medium">
                   Ask me anything related to your school, its programs,
                   resources, and much more...
                 </p>
                 <img
-                  class="w-16 h-16 md:w-24 md:h-24"
+                  class="lg:w-16 lg:h-16 w-8 h-8"
                   src="./assets/img/ACE GPT Logo.png"
+                  width="60px"
+                  height="60px"
                   alt="ACE GPT Logo"
                 />
               </div>
@@ -293,37 +293,37 @@
               </div>
             </div>
           </div>
-          
+
           <div id="campus-cart" class="tab-content hidden">
             <h2 class="text-4xl font-bold mb-4">Campus Cart</h2>
             <p>Content for Campus Cart...</p>
           </div>
-          
+
           <div id="workspace" class="tab-content hidden">
             <h2 class="text-4xl font-bold mb-4">Workspace</h2>
             <p>Content for Workspace...</p>
           </div>
-          
+
           <div id="student-hub" class="tab-content hidden">
             <h2 class="text-4xl font-bold mb-4">Student Hub</h2>
             <p>Content for Student Hub...</p>
           </div>
-          
+
           <div id="uni-link" class="tab-content hidden">
             <h2 class="text-4xl font-bold mb-4">Uni-Link</h2>
             <p>Content for Uni-Link...</p>
           </div>
-          
+
           <div id="easyfit" class="tab-content hidden">
             <h2 class="text-4xl font-bold mb-4">EasyFit</h2>
             <p>Content for EasyFit...</p>
           </div>
-          
+
           <div id="serenity" class="tab-content hidden">
             <h2 class="text-4xl font-bold mb-4">Serenity</h2>
             <p>Content for Serenity...</p>
           </div>
-          
+
           <div id="global-spotlight" class="tab-content hidden">
             <h2 class="text-4xl font-bold mb-4">Global Spotlight</h2>
             <p>Content for Global Spotlight...</p>
