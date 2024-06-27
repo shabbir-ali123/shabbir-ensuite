@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- headedr -->
+    <header class="bg-white shadow-md py-3">
+      <nav class="flex justify-between items-center mx-8">
+        <div>
+          <img
+            src="../../assets/img/ENSUITELogo.png"
+            width="198"
+            height="45"
+            alt="ENSUITE Logo"
+          />
+        </div>
+        <div class="flex gap-4 items-center">
+          <img
+            src="../../assets/img/Bell Vector.png"
+            width="24px"
+            height="24px"
+            alt=""
+          />
+          <img
+            src="../../assets/img/Profile Avatar.png"
+            width="44px"
+            height="44px"
+            alt="profile"
+          />
+          <button
+            id="menu-btn"
+            class="md:hidden border-2 border-solid-purple text-white px-2 py-2 rounded-lg"
+            onclick="toggleSidebar()"
+          >
+            <img
+              src="../../assets/img/align-justify.svg"
+              class="text-white"
+              width="30px"
+              height="30px"
+              alt="ENSUITE Logo"
+            />
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- Sidebar -->
+    <div class="flex">
+      <aside
+        id="sidebar"
+        class="bg-white p-5 shadow-md h-screen md:h-auto fixed md:relative hidden md:block transition-transform transform -translate-x-full md:translate-x-0"
+        style="width: 270px"
+      >
+        <img
+          src="../../assets/img/ENSUITELogo.png"
+          width="198"
+          height="45"
+          alt="ENSUITE Logo"
+        />
+        <ul class="list-none p-0 py-16">
+          <a href="./aceGPT.html">
+            <li
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+              onclick="openTab('ace-gpt', this)"
+            >
+              ACE GPT
+              <img
+                src="../../assets/img/ACE GPT.png"
+                width="24px"
+                height="24px"
+                alt="ACE GPT Icon"
+              />
+            </li>
+          </a>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Campus Cart
+            <img
+              src="../../assets/img/Campus.png"
+              width="24px"
+              height="24px"
+              alt="Campus Cart Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Workspace
+            <img
+              src="../../assets/img/Files Vector.png"
+              width="24px"
+              height="24px"
+              alt="Workspace Icon"
+            />
+          </li>
+          <a href="../../studyBuddyAI.html">
+            <li
+              class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+            >
+              Student Hub
+              <img
+                src="../../assets/img/Student Vector.png"
+                width="24px"
+                height="24px"
+                alt="Student Hub Icon"
+              />
+            </li>
+          </a>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Uni-Link
+            <img
+              src="../../assets/img/Chat Vector.png"
+              width="24px"
+              height="24px"
+              alt="Uni-Link Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            EasyFit
+            <img
+              src="../../assets/img/Heart Vector.png"
+              width="24px"
+              height="24px"
+              alt="EasyFit Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Serenity
+            <img
+              src="../../assets/img/Mind Vector.png"
+              width="24px"
+              height="24px"
+              alt="Serenity Icon"
+            />
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+          >
+            Global Spotlight
+            <img
+              src="../../assets/img/Vector.png"
+              width="24px"
+              height="24px"
+              alt="Global Spotlight Icon"
+            />
+          </li>
+        </ul>
+      </aside>
+      <!-- content -->
+      <div style="padding-top: 76px; padding-left: 176px; width: 60%">
+        <div>
+          <h2 style="font-size: 23px; font-weight: 500">Muscle Makers</h2>
+          <p style="font-size: 18px; font-weight: 400">
+            View files uploaded by workspace members
+          </p>
+        </div>
+        <div style="margin-top: 87px">
+          <span class="flex gap-3">
+            <img src="../../assets/img/search.png" alt="" />
+            <p style="color: #bcbcbc; font-size: 18px; font-weight: 600">
+              Browse Files
+            </p>
+          </span>
+          <div
+            style="
+              margin-top: 32px;
+              width: 100%;
+              height: 53vh;
+              display: grid;
+              grid-template-columns: repeat(6, 1fr);
+              grid-template-rows: 1fr 1fr;
+            "
+          >
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+            <div style="width: 96%; height: 64%; /* background-color: red; */">
+              <span style="display: flex">
+                <img src="../../assets/img/File Vector.png" alt="" />
+                <a href="#">...</a>
+              </span>
+              <h3 style="font-size: 12px; font-weight: 700; padding-top: 5px">
+                Seminar
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- delete -->
+
+    <!-- delete -->
+  </body>
+</html>
