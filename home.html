@@ -83,6 +83,7 @@
         <ul class="list-none p-0 py-16">
           <a href="./aceGPT.html">
             <li
+<<<<<<< HEAD
               class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
               onclick="openTab('ace-gpt', this)"
             >
@@ -97,6 +98,25 @@
           </a>
           <li
             class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+=======
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+            onclick="openTab('./ace-gpt', this)"
+          >
+          
+            ACE GPT
+            <img
+              src="./assets/img/ACE GPT.png"
+              width="24px"
+              height="24px"
+              alt="ACE GPT Icon"
+            />
+          </li>
+          </a>
+        
+          <li
+            class="cursor-pointer py-2 px-2 font-bold menu-item flex items-center justify-between pb-8"
+            onclick="openTab('campus-cart', this)"
+>>>>>>> 1df62cce104344041209c57d8f53356ee196416c
           >
             Campus Cart
             <img
@@ -218,7 +238,7 @@
         <main
           class="flex-1 bg-white m-10 rounded-lg xl:p-5 xl:px-10 transition-all duration-300"
         >
-          <div class="tab-content" id="ace-gpt">
+          <div class="tab-content" id="home">
             <h1 class="font-bold mb-5 xl:text-4xl md:text-lg">
               Welcome to ENSUITE!
             </h1>
@@ -377,9 +397,9 @@
         el.classList.add("active");
       }
 
-      document.addEventListener("DOMContentLoaded", function () {
-        openTab("ace-gpt", document.querySelector(".menu-item"));
-      });
+      // document.addEventListener("DOMContentLoaded", function () {
+      //   openTab("ace-gpt", document.querySelector(".menu-item"));
+      // });
     </script>
   </body>
 </html>
