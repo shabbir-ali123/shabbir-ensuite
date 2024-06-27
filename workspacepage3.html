@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!-- headedr -->
+    <header class="bg-white shadow-md py-3">
+      <nav class="flex justify-between items-center mx-8">
+        <div>
+          <img
+            src="./assets/img/ENSUITELogo.png"
+            width="198"
+            height="45"
+            alt="ENSUITE Logo"
+          />
+        </div>
+        <div class="flex gap-4 items-center">
+          <img
+            src="./assets/img/Bell Vector.png"
+            width="24px"
+            height="24px"
+            alt=""
+          />
+          <img
+            src="./assets/img/Profile Avatar.png"
+            width="44px"
+            height="44px"
+            alt="profile"
+          />
+          <button
+            id="menu-btn"
+            class="md:hidden border-2 border-solid-purple text-white px-2 py-2 rounded-lg"
+            onclick="toggleSidebar()"
+          >
+            <img
+              src="./assets/img/align-justify.svg"
+              class="text-white"
+              width="30px"
+              height="30px"
+              alt="ENSUITE Logo"
+            />
+          </button>
+        </div>
+      </nav>
+    </header>
+    <!-- Sidebar -->
+    <div class="flex">
+      <aside
+        id="sidebar"
+        class="bg-white p-5 pt-16 shadow-md h-screen fixed md:relative hidden md:block transition-transform transform md:translate-x-0 md:hidden-sidebar"
+        style="width: 270px; height: 100%; right: 0"
+      >
+        <button class="close-btn" onclick="toggleSidebar()">×</button>
+
+        <ul class="list-none p-0 h-full">
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('ace-gpt', this)"
+          >
+            <img
+              src="./assets/img/ACE GPT.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />ACE GPT
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('campus-cart', this)"
+          >
+            <img
+              src="./assets/img/Campus.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Campus Cart
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('workspace', this)"
+          >
+            <img
+              src="./assets/img/Files Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Workspace
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('student-hub', this)"
+          >
+            <img
+              src="./assets/img/Student Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Student Hub
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('uni-link', this)"
+          >
+            <img
+              src="./assets/img/Chat Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Uni-Link
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('easyfit', this)"
+          >
+            <img
+              src="./assets/img/Heart Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />EasyFit
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('serenity', this)"
+          >
+            <img
+              src="./assets/img/Mind Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Serenity
+          </li>
+          <li
+            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
+            onclick="openTab('global-spotlight', this)"
+          >
+            <img
+              src="./assets/img/Vector.png"
+              width="24px"
+              height="24px"
+              alt=""
+            />Global Spotlight
+          </li>
+        </ul>
+      </aside>
+      <!-- content -->
+      <div class="flex w-full">
+        <div
+          style="
+            width: 30%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+          "
+        >
+          <div
+            style="
+              width: 75%;
+              height: 20%;
+              display: flex;
+              flex-direction: column;
+              gap: 30px;
+            "
+          >
+            <div class="flex" style="gap: 22px">
+              <img
+                src="./assets/img/homewhite.png"
+                width="24px"
+                height="24px"
+                alt="icon"
+              />
+              <a
+                href="#"
+                style="font-size: 15px; font-weight: 700; color: #c5c5c5"
+                >Dashboard</a
+              >
+            </div>
+            <div class="flex" style="gap: 22px">
+              <div
+                style="
+                  width: 30px;
+                  height: 30px;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border-radius: 31px;
+                  background-color: #f2ddff;
+                "
+              >
+                <img
+                  src="./assets/img/discoverblack.png"
+                  width="24px"
+                  height="24px"
+                  alt="icon"
+                />
+              </div>
+              <a href="#" style="font-size: 15px; font-weight: 700">Discover</a>
+            </div>
+          </div>
+        </div>
+        <div style="width: 55%; padding-top: 38px">
+          <div>
+            <h2 class="font-bold" style="font-size: 34px">
+              Workspace Discovery
+            </h2>
+          </div>
+          <div>
+            <div
+              style="
+                margin-top: 12px;
+                display: flex;
+                justify-content: space-between;
+              "
+            >
+              <span
+                style="
+                  display: flex;
+                  gap: 12px;
+                  color: #757575;
+                  font-size: 18px;
+                  font-weight: 400;
+                "
+              >
+                <img src="./assets/img/search.png" alt="icon" />
+                <p class="font-medium" style="color: #c4c4c4; font-size: 18px">
+                  Browse Workspaces
+                </p>
+              </span>
+            </div>
+          </div>
+          <div style="margin-top: 32px">
+            <h2 class="font-bold" style="color: #272727; font-size: 16px">
+              Trending Workspaces
+            </h2>
+            <!-- cards -->
+            <div
+              style="
+                margin-top: 12px;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+              "
+            >
+              <div
+                style="
+                  width: 29%;
+                  height: 33vh;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 2px solid #ececec;
+                "
+              >
+                <img src="./assets/img/image 151.png" width="100%" alt="" />
+                <div
+                  style="
+                    width: 100%;
+                    height: 44%;
+                    background-color: white;
+                    padding: 9px 9px 0px 9px;
+                  "
+                >
+                  <h1 style="font-size: 14px; font-weight: 500">
+                    BU111 Study Group
+                  </h1>
+                  <p
+                    style="
+                      font-size: 9px;
+                      font-weight: 500;
+                      padding-top: 7px;
+                      color: #989898;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet, elit sed do eiusmod tempor
+                    incididunt labor...
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-top: 8px;
+                    "
+                  >
+                    <span style="display: flex; gap: 6px; align-items: center">
+                      <img src="./assets/img/Students Vector.png" alt="" />
+                      <p style="font-size: 11px; font-weight: 500">
+                        2893 Members
+                      </p>
+                    </span>
+                    <p
+                      style="font-size: 11px; font-weight: 400; color: #4b4b4b"
+                    >
+                      $ Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- card2 -->
+              <div
+                style="
+                  width: 29%;
+                  height: 33vh;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 2px solid #ececec;
+                "
+              >
+                <img src="./assets/img/image 135.png" width="100%" alt="" />
+                <div
+                  style="
+                    width: 100%;
+                    height: 44%;
+                    background-color: white;
+                    padding: 9px 9px 0px 9px;
+                  "
+                >
+                  <h1 style="font-size: 14px; font-weight: 500">
+                    BU111 Study Group
+                  </h1>
+                  <p
+                    style="
+                      font-size: 9px;
+                      font-weight: 500;
+                      padding-top: 7px;
+                      color: #989898;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet, elit sed do eiusmod tempor
+                    incididunt labor...
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-top: 8px;
+                    "
+                  >
+                    <span style="display: flex; gap: 6px; align-items: center">
+                      <img src="./assets/img/Students Vector.png" alt="" />
+                      <p style="font-size: 11px; font-weight: 500">
+                        2893 Members
+                      </p>
+                    </span>
+                    <p
+                      style="font-size: 11px; font-weight: 400; color: #4b4b4b"
+                    >
+                      $ Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- card 3 -->
+              <div
+                style="
+                  width: 29%;
+                  height: 33vh;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 2px solid #ececec;
+                "
+              >
+                <img src="./assets/img/image 149.png" width="100%" alt="" />
+                <div
+                  style="
+                    width: 100%;
+                    height: 44%;
+                    background-color: white;
+                    padding: 9px 9px 0px 9px;
+                  "
+                >
+                  <h1 style="font-size: 14px; font-weight: 500">
+                    BU111 Study Group
+                  </h1>
+                  <p
+                    style="
+                      font-size: 9px;
+                      font-weight: 500;
+                      padding-top: 7px;
+                      color: #989898;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet, elit sed do eiusmod tempor
+                    incididunt labor...
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-top: 8px;
+                    "
+                  >
+                    <span style="display: flex; gap: 6px; align-items: center">
+                      <img src="./assets/img/Students Vector.png" alt="" />
+                      <p style="font-size: 11px; font-weight: 500">
+                        2893 Members
+                      </p>
+                    </span>
+                    <p
+                      style="font-size: 11px; font-weight: 400; color: #4b4b4b"
+                    >
+                      $ Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- card 4 -->
+              <div
+                style="
+                  width: 29%;
+                  height: 33vh;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 2px solid #ececec;
+                "
+              >
+                <img src="./assets/img/image 150.png" width="100%" alt="" />
+                <div
+                  style="
+                    width: 100%;
+                    height: 44%;
+                    background-color: white;
+                    padding: 9px 9px 0px 9px;
+                  "
+                >
+                  <h1 style="font-size: 14px; font-weight: 500">
+                    BU111 Study Group
+                  </h1>
+                  <p
+                    style="
+                      font-size: 9px;
+                      font-weight: 500;
+                      padding-top: 7px;
+                      color: #989898;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet, elit sed do eiusmod tempor
+                    incididunt labor...
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-top: 8px;
+                    "
+                  >
+                    <span style="display: flex; gap: 6px; align-items: center">
+                      <img src="./assets/img/Students Vector.png" alt="" />
+                      <p style="font-size: 11px; font-weight: 500">
+                        2893 Members
+                      </p>
+                    </span>
+                    <p
+                      style="font-size: 11px; font-weight: 400; color: #4b4b4b"
+                    >
+                      $ Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- card 5  -->
+              <div
+                style="
+                  width: 29%;
+                  height: 33vh;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 2px solid #ececec;
+                "
+              >
+                <img src="./assets/img/image 152.png" width="100%" alt="" />
+                <div
+                  style="
+                    width: 100%;
+                    height: 44%;
+                    background-color: white;
+                    padding: 9px 9px 0px 9px;
+                  "
+                >
+                  <h1 style="font-size: 14px; font-weight: 500">
+                    BU111 Study Group
+                  </h1>
+                  <p
+                    style="
+                      font-size: 9px;
+                      font-weight: 500;
+                      padding-top: 7px;
+                      color: #989898;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet, elit sed do eiusmod tempor
+                    incididunt labor...
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-top: 8px;
+                    "
+                  >
+                    <span style="display: flex; gap: 6px; align-items: center">
+                      <img src="./assets/img/Students Vector.png" alt="" />
+                      <p style="font-size: 11px; font-weight: 500">
+                        2893 Members
+                      </p>
+                    </span>
+                    <p
+                      style="font-size: 11px; font-weight: 400; color: #4b4b4b"
+                    >
+                      $ Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- card6 -->
+              <div
+                style="
+                  width: 29%;
+                  height: 33vh;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 2px solid #ececec;
+                "
+              >
+                <img src="./assets/img/image 153.png" width="100%" alt="" />
+                <div
+                  style="
+                    width: 100%;
+                    height: 44%;
+                    background-color: white;
+                    padding: 9px 9px 0px 9px;
+                  "
+                >
+                  <h1 style="font-size: 14px; font-weight: 500">
+                    BU111 Study Group
+                  </h1>
+                  <p
+                    style="
+                      font-size: 9px;
+                      font-weight: 500;
+                      padding-top: 7px;
+                      color: #989898;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet, elit sed do eiusmod tempor
+                    incididunt labor...
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-top: 8px;
+                    "
+                  >
+                    <span style="display: flex; gap: 6px; align-items: center">
+                      <img src="./assets/img/Students Vector.png" alt="" />
+                      <p style="font-size: 11px; font-weight: 500">
+                        2893 Members
+                      </p>
+                    </span>
+                    <p
+                      style="font-size: 11px; font-weight: 400; color: #4b4b4b"
+                    >
+                      $ Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- card 7 -->
+              <div
+                style="
+                  width: 29%;
+                  height: 33vh;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 2px solid #ececec;
+                "
+              >
+                <img src="./assets/img/image 153.png" width="100%" alt="" />
+                <div
+                  style="
+                    width: 100%;
+                    height: 44%;
+                    background-color: white;
+                    padding: 9px 9px 0px 9px;
+                  "
+                >
+                  <h1 style="font-size: 14px; font-weight: 500">
+                    BU111 Study Group
+                  </h1>
+                  <p
+                    style="
+                      font-size: 9px;
+                      font-weight: 500;
+                      padding-top: 7px;
+                      color: #989898;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet, elit sed do eiusmod tempor
+                    incididunt labor...
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-top: 8px;
+                    "
+                  >
+                    <span style="display: flex; gap: 6px; align-items: center">
+                      <img src="./assets/img/Students Vector.png" alt="" />
+                      <p style="font-size: 11px; font-weight: 500">
+                        2893 Members
+                      </p>
+                    </span>
+                    <p
+                      style="font-size: 11px; font-weight: 400; color: #4b4b4b"
+                    >
+                      $ Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- card 8 -->
+              <div
+                style="
+                  width: 29%;
+                  height: 33vh;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 2px solid #ececec;
+                "
+              >
+                <img src="./assets/img/image 154.png" width="100%" alt="" />
+                <div
+                  style="
+                    width: 100%;
+                    height: 44%;
+                    background-color: white;
+                    padding: 9px 9px 0px 9px;
+                  "
+                >
+                  <h1 style="font-size: 14px; font-weight: 500">
+                    BU111 Study Group
+                  </h1>
+                  <p
+                    style="
+                      font-size: 9px;
+                      font-weight: 500;
+                      padding-top: 7px;
+                      color: #989898;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet, elit sed do eiusmod tempor
+                    incididunt labor...
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-top: 8px;
+                    "
+                  >
+                    <span style="display: flex; gap: 6px; align-items: center">
+                      <img src="./assets/img/Students Vector.png" alt="" />
+                      <p style="font-size: 11px; font-weight: 500">
+                        2893 Members
+                      </p>
+                    </span>
+                    <p
+                      style="font-size: 11px; font-weight: 400; color: #4b4b4b"
+                    >
+                      $ Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <!-- card 9 -->
+              <div
+                style="
+                  width: 29%;
+                  height: 33vh;
+                  border-radius: 12px;
+                  overflow: hidden;
+                  border: 2px solid #ececec;
+                "
+              >
+                <img src="./assets/img/image 156.png" width="100%" alt="" />
+                <div
+                  style="
+                    width: 100%;
+                    height: 44%;
+                    background-color: white;
+                    padding: 9px 9px 0px 9px;
+                  "
+                >
+                  <h1 style="font-size: 14px; font-weight: 500">
+                    BU111 Study Group
+                  </h1>
+                  <p
+                    style="
+                      font-size: 9px;
+                      font-weight: 500;
+                      padding-top: 7px;
+                      color: #989898;
+                    "
+                  >
+                    Lorem ipsum dolor sit amet, elit sed do eiusmod tempor
+                    incididunt labor...
+                  </p>
+                  <div
+                    style="
+                      display: flex;
+                      justify-content: space-between;
+                      padding-top: 8px;
+                    "
+                  >
+                    <span style="display: flex; gap: 6px; align-items: center">
+                      <img src="./assets/img/Students Vector.png" alt="" />
+                      <p style="font-size: 11px; font-weight: 500">
+                        2893 Members
+                      </p>
+                    </span>
+                    <p
+                      style="font-size: 11px; font-weight: 400; color: #4b4b4b"
+                    >
+                      $ Education
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="width: 15%; padding-top: 133px">
+          <div
+            style="
+              display: flex;
+              width: 100%;
+              gap: 18px;
+              align-items: start;
+              flex-direction: column;
+            "
+          >
+            <a
+              href="#"
+              style="
+                background-color: #ececec;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >All Workspaces</a
+            >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >My Workspaces</a
+            >
+          </div>
+          <div
+            style="
+              margin-top: 48px;
+              display: flex;
+              width: 100%;
+              gap: 13px;
+              align-items: start;
+              flex-direction: column;
+            "
+          >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Acedemics</a
+            >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Arts and Feshion</a
+            >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Athletics</a
+            >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Cultural</a
+            >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Education</a
+            >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Health and Wellness</a
+            >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Social</a
+            >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Sports</a
+            >
+            <a
+              href="#"
+              style="
+                color: #989898;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Technology and Innovation</a
+            >
+          </div>
+          <div style="margin-top: 17px;">
+            <a
+              href="#"
+              style="
+                border: 1px solid #2F006A;
+                color: #180030;
+                padding: 8px 17px 8px 17px;
+                border-radius: 24px;
+                font-weight: 600;
+                font-size: 13px;
+              "
+              >Create Workspace</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
