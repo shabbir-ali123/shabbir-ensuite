@@ -176,8 +176,8 @@
             <div class="flex items-center flex-col">
               <a href="#" class="font-bold md:text-lg flex gap-4 items-center">
                 <img src="../../assets/img/Group-left.png" alt="" />Muscle
-                Makers</a
-              >
+                Makers
+              </a>
             </div>
             <div class="flex items-center">
               <ul
@@ -241,141 +241,188 @@
         <main
           class="transition-all duration-300 md:col-span-3 p-4 lg:p-14 lg:flex xl:w-11/12 xl:gap-16"
         >
-          <div class="flex flex-col xl:w-2/5 gap-4">
-            <h2
-              class="text-2xl xl:text-4xl font-medium mb-10 text-center lg:text-left"
-            >
-              Muscle Makers' Blog
-            </h2>
-            <p
-              class="border-b-2 border-gray-200 md:font-bold"
-              style="color: #949494"
-            >
-              Welcome to our blog! Post any workout updates, tips, or
-              fitness-related experiences to share with the community. Engage
-              with fellow members through comments and likes. Let's inspire and
-              motivate each other on our fitness journeys!
-            </p>
-            <a href="../../workspace/workspaceID/Blog/blogcreate1.html">
-              <button
-                class="custom-button text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 flex items-center gap-2 md:w-2/5 md:font-bold"
-                style="background-color: #3a1569"
+          <div class="flex flex-col xl:w-1/5 justify-center gap-4">
+            <div class="mb-4 flex flex-col gap-4">
+              <div
+                class="flex items-center gap-4 cursor-pointer calendar-view"
+                onclick="openModal()"
               >
-                Create Post
-                <img src="../../assets/img/plus-icon.png" alt="plus icon" />
-              </button>
-            </a>
-          </div>
-          <div class="md:w-full md:flex md:flex-col">
-            <div class="flex flex-col md:w-full m-auto">
-              <h1 class="text-xl font-bold py-3" style="color: #aaaaaa">
-                Recent
-              </h1>
-              <!-- Blog Posts -->
-              <div class="space-y-6">
-                <!-- card 1 -->
-                <div
-                  class="p-4 rounded-lg shadow-md"
-                  style="background-color: #fbfbfb"
-                >
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <h3 class="md:text-xl font-semibold">
-                        Pre-Workout Holy Grail
-                      </h3>
-                      <p class="text-xs font-bold" style="color: #787878">
-                        June 12, 2024
-                      </p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                      <img src="../../assets/img/Group 618.png" alt="" />
-                      <img src="../../assets/img/heart-Vector.png" alt="" />
-                    </div>
-                  </div>
-                  <p class="font-medium mt-6">
-                    Hey guys, just have to share my go-to pre-workout snack:
-                    banana with peanut butter and a handful of almonds. It's the
-                    perfect blend of carbs and protein to fuel my workouts. What
-                    do you guys have before hitting the gym?
-                  </p>
-                </div>
-
-                <!-- card 2 -->
-                <div
-                  class="p-4 rounded-lg shadow-md"
-                  style="background-color: #fbfbfb"
-                >
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <h3 class="md:text-xl font-semibold">
-                        Reaching New Heights
-                      </h3>
-                      <p class="text-xs font-bold" style="color: #787878">
-                        June 12, 2024
-                      </p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                      <img src="../../assets/img/Group 618.png" alt="" />
-                      <img src="../../assets/img/heart-Vector.png" alt="" />
-                    </div>
-                  </div>
-                  <div class="flex items-center justify-between">
-                    <p class="font-medium mt-6 xl:w-4/5">
-                      I'm super excited to share that I've achieved a new
-                      personal record in deadlifting! This milestone comes after
-                      months of focused training, consistent effort, and a lot
-                      of support from this incredible community. <br />
-                      <br />
-                      The journey to this PR was challenging but deeply
-                      rewarding. Every workout, every lift counted, pushing me
-                      closer to this goal. And today, I can proudly say I've
-                      lifted my highest weight ever!
-                    </p>
-                    <div>
-                      <img src="../../assets/img/image 253.png" alt="" />
-                    </div>
-                  </div>
-                </div>
-
-                <!-- card 3 -->
-                <div
-                  class="p-4 rounded-lg shadow-md"
-                  style="background-color: #fbfbfb"
-                >
-                  <div class="flex items-center justify-between">
-                    <div>
-                      <h3 class="md:text-xl font-semibold">
-                        Pre-Workout Holy Grail
-                      </h3>
-                      <p class="text-xs font-bold" style="color: #787878">
-                        June 12, 2024
-                      </p>
-                    </div>
-                    <div class="flex items-center gap-4">
-                      <img src="../../assets/img/Group 618.png" alt="" />
-                      <img src="../../assets/img/heart-Vector.png" alt="" />
-                    </div>
-                  </div>
-                  <p class="font-medium mt-6">
-                    Hey guys, just have to share my go-to pre-workout snack:
-                    banana with peanut butter and a handful of almonds. It’s the
-                    perfect blend of carbs and protein to fuel my workouts. What
-                    do you guys have before hitting the gym?
-                  </p>
-                </div>
+                <img
+                  src="../../assets/img/homem-icon.png"
+                  alt=""
+                  class="rounded-full p-2"
+                  style="background-color: #f2ddff"
+                />
+                <p class="font-bold xl:text-xl">Calendar View</p>
+              </div>
+              <div class="flex items-center gap-4">
+                <img src="../../assets/img/iconamoon_discover.png" alt="" />
+                <p class="font-bold xl:text-xl" style="color: #c5c5c5">
+                  List View
+                </p>
               </div>
             </div>
+            <div class="mb-4">
+              <button
+                class="text-black rounded-full p-2.5 text-sm font-medium"
+                style="background-color: #ececec"
+              >
+                All Events
+              </button>
+            </div>
+            <div class="event-category flex items-center gap-4">
+              <div
+                class="event-dot w-4 h-4 rounded-full"
+                style="background-color: #ff0000"
+              ></div>
+              <span style="color: #828282">Training Sessions</span>
+            </div>
+            <div class="event-category flex items-center gap-4">
+              <div
+                class="event-dot w-4 h-4 rounded-full"
+                style="background-color: #00ff00"
+              ></div>
+              <span style="color: #828282">Nutrition Workshops</span>
+            </div>
+            <div class="event-category flex items-center gap-4">
+              <div
+                class="event-dot w-4 h-4 rounded-full"
+                style="background-color: #0000ff"
+              ></div>
+              <span style="color: #828282">Wellness Seminars</span>
+            </div>
+            <div class="event-category flex items-center gap-4">
+              <div
+                class="event-dot w-4 h-4 rounded-full"
+                style="background-color: #ffa500"
+              ></div>
+              <span style="color: #828282">Community Runs</span>
+            </div>
+            <div class="event-category flex items-center gap-4">
+              <div
+                class="event-dot w-4 h-4 rounded-full"
+                style="background-color: #ff69b4"
+              ></div>
+              <span style="color: #828282">Competition Events</span>
+            </div>
+            <div class="event-category flex items-center gap-4">
+              <div
+                class="event-dot w-4 h-4 rounded-full font-medium"
+                style="background-color: #ffa500"
+              ></div>
+              <span style="color: #828282">Equipment Tutorials</span>
+            </div>
+            <div class="mt-6">
+              <button
+                class="border-2 border-blue-800 font-bold rounded-full p-2.5 text-sm font-bold hover:bg-purple-500 hover:text-white transition md:mb-4 xl:mb-0"
+              >
+                Manage Categories
+              </button>
+            </div>
+          </div>
+          <div class="md:w-full md:flex md:flex-col">
+            <div class="flex items-baseline gap-4 md:p-2 p-0">
+              <img src="../../assets/svg/Left Arrow Vector.svg" alt="" />
+              <h2 class="font-bold xl:text-3xl text-xl mb-6">June 2024</h2>
+              <img src="../../assets/svg/Right Arrow Vector.svg" alt="" />
+            </div>
+            <img
+              src="../../assets/img/calender.png"
+              alt="Calendar Image"
+              id="calendar-img"
+            />
           </div>
         </main>
       </div>
     </div>
 
+    <!-- Error Modal -->
+
+    <!-- Modal -->
+    <!-- Event Modal -->
+    <div
+      id="event-modal"
+      class="fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div
+        class="bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:max-w-lg sm:w-full"
+      >
+        <div class="px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <div class="sm:flex sm:items-start">
+            <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+              <h3
+                class="text-2xl leading-6 font-medium text-center font-bold text-align: center"
+                id="modal-title"
+              >
+                Balancing for Performance
+              </h3>
+              <div class="mt-2">
+                <p class="text-base">
+                  <strong class="block"
+                    >📅 Friday June 7, 2024 | 6:15 pm – 6:45 pm</strong
+                  >
+                </p>
+                <p
+                  style="color: #5d5d5d"
+                  class="block mt-2 text-base font-bold"
+                >
+                  <span style="color: #b0b0b0" class="font-bold">
+                    Description:</span
+                  >
+                  You’ll learn how to optimize your diet by adjusting protein,
+                  carbohydrate, and fat intake to enhance your athletic
+                  performance and recovery.
+                </p>
+                <a
+                  href="https://meet.google.com/xlnzd-vjgse-6nv4i"
+                  target="_blank"
+                  class="block mt-2 text-blue-500 underline"
+                >
+                  Meeting Link: https://meet.google.com/xlnzd-vjgse-6nv4i
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+          <button
+            type="button"
+            class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+            onclick="closeModal()"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
     <script>
-      // Toggle sidebar visibility on mobile
       function toggleSidebar() {
         var sidebar = document.getElementById("sidebar");
         sidebar.classList.toggle("hidden");
       }
+
+      function openModal() {
+        document.getElementById("event-modal").classList.remove("hidden");
+      }
+
+      function closeModal() {
+        document.getElementById("event-modal").classList.add("hidden");
+      }
+
+      function openErrorModal() {
+        document.getElementById("error-modal").classList.remove("hidden");
+      }
+
+      function closeErrorModal() {
+        document.getElementById("error-modal").classList.add("hidden");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .getElementById("calendar-img")
+          .addEventListener("click", openModal);
+      });
     </script>
   </body>
 </html>

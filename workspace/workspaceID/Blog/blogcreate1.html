@@ -66,7 +66,7 @@
         style="width: 270px"
       >
         <img
-          src="./assets/img/ENSUITELogo.png"
+          src="../../../assets/img/ENSUITELogo.png"
           width="198"
           height="45"
           alt="ENSUITE Logo"
@@ -79,7 +79,7 @@
             >
               ACE GPT
               <img
-                src="./assets/img/ACE GPT.png"
+                src="../../../assets/img/ACE GPT.png"
                 width="24px"
                 height="24px"
                 alt="ACE GPT Icon"
@@ -91,7 +91,7 @@
           >
             Campus Cart
             <img
-              src="./assets/img/Campus.png"
+              src="../../../assets/img/Campus.png"
               width="24px"
               height="24px"
               alt="Campus Cart Icon"
@@ -102,7 +102,7 @@
           >
             Workspace
             <img
-              src="./assets/img/Files Vector.png"
+              src="../../../assets/img/Files Vector.png"
               width="24px"
               height="24px"
               alt="Workspace Icon"
@@ -114,7 +114,7 @@
             >
               Student Hub
               <img
-                src="./assets/img/Student Vector.png"
+                src="../../../assets/img/Student Vector.png"
                 width="24px"
                 height="24px"
                 alt="Student Hub Icon"
@@ -126,7 +126,7 @@
           >
             Uni-Link
             <img
-              src="./assets/img/Chat Vector.png"
+              src="../../../assets/img/Chat Vector.png"
               width="24px"
               height="24px"
               alt="Uni-Link Icon"
@@ -137,7 +137,7 @@
           >
             EasyFit
             <img
-              src="./assets/img/Heart Vector.png"
+              src="../../../assets/img/Heart Vector.png"
               width="24px"
               height="24px"
               alt="EasyFit Icon"
@@ -148,7 +148,7 @@
           >
             Serenity
             <img
-              src="./assets/img/Mind Vector.png"
+              src="../../../assets/img/Mind Vector.png"
               width="24px"
               height="24px"
               alt="Serenity Icon"
@@ -159,7 +159,7 @@
           >
             Global Spotlight
             <img
-              src="./assets/img/Vector.png"
+              src="../../../assets/img/Vector.png"
               width="24px"
               height="24px"
               alt="Global Spotlight Icon"
@@ -174,7 +174,7 @@
           <nav class="flex justify-between items-center mx-4 md:mx-8">
             <div class="flex items-center flex-col">
               <a href="#" class="font-bold md:text-lg flex gap-4 items-center">
-                <img src="./assets/img/Group-left.png" alt="" />Muscle Makers</a
+                <img src="../../../assets/img/Group-left.png" alt="" />Muscle Makers</a
               >
             </div>
             <div class="flex items-center">
@@ -206,13 +206,13 @@
             </div>
             <div class="flex gap-4 items-center">
               <img
-                src="./assets/img/Bell Vector.png"
+                src="../../../assets/img/Bell Vector.png"
                 width="24px"
                 height="24px"
                 alt="Bell Icon"
               />
               <img
-                src="./assets/img/Profile Avatar.png"
+                src="../../../assets/img/Profile Avatar.png"
                 width="44px"
                 height="44px"
                 alt="Profile"
@@ -223,7 +223,7 @@
                 onclick="toggleSidebar()"
               >
                 <img
-                  src="./assets/img/align-justify.svg"
+                  src="../../../assets/img/align-justify.svg"
                   width="30px"
                   height="30px"
                   alt="Menu Icon"
@@ -252,20 +252,24 @@
               with fellow members through comments and likes. Let's inspire and
               motivate each other on our fitness journeys!
             </p>
+            <a href="../../view/blog.html">
             <button
-              class="custom-button text-white px-4 py-2 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 flex items-center gap-2 md:w-2/5 md:font-bold"
-              style="background-color: #3a1569"
+              class="custom-button  py-2 rounded-lg hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 flex items-center justify-center gap-2 md:w-2/5 md:font-bold lg:w-4/12	"
+              style="background-color: #E5E5E5
+
+"
             >
-              Create Post
-              <img src="./assets/img/plus-icon.png" alt="plus icon" />
+            <img src="../../../assets/img/leftarrow.png" alt="plus icon" />
+              Cancel
             </button>
+          </a>
           </div>
           <div class="flex flex-col">
             <form class="bg-white p-6 rounded-lg space-y-4">
-              <h2 class="text-2xl font-medium mb-4">Craft your Post</h2>
+              <h2 class="text-2xl lg:text-3xl font-medium mb-4">Craft your Post</h2>
               <div class="gap-4">
                 <div>
-                  <label for="title" class="block text-gray-700">Title</label>
+                  <label for="title" class="block font-bold">Title</label>
                   <input
                     type="text"
                     id="title"
@@ -274,9 +278,12 @@
                     placeholder="Start typing here..."
                   />
                 </div>
-                <div class="flex justify-between">
+                <div class="flex justify-between flex-col">
                   <div>
-                    <label for="content" class="flex text-gray-700">Content</label>
+                    <div class="flex justify-between">
+                    <label for="content" class="flex  font-bold">Content</label>
+                    <label for="content" class="flex text-gray-700 font-bold">optional</label>
+                  </div>
                     <textarea
                       id="content"
                       name="content"
@@ -289,7 +296,7 @@
                     <label for="upload-image" class="text-gray-700">Upload Image</label>
                     <div class="border-dashed border-2 border-gray-300 rounded-lg p-6 text-center">
                       <img
-                        src="./assets/img/Taking-Pictures-Cameras--Streamline-Ultimate.svg.png"
+                        src="../../../assets/img/Taking-Pictures-Cameras--Streamline-Ultimate.svg.png"
                         alt="Upload Icon"
                         class="mx-auto mb-2"
                       />
@@ -301,9 +308,9 @@
               <div class="flex justify-end">
                 <button
                   type="submit"
-                  class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 flex items-center gap-2"
+                  class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 flex items-center gap-2"style="background-color: #3A1569"
                 >
-                  Publish Post <img src="./assets/img/tick.png" alt="" />
+                  Publish Post <img src="../../../assets/img/tick.png" alt="" />
                 </button>
               </div>
             </form>
