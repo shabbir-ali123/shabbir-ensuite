@@ -52,104 +52,52 @@
     </header>
     <!-- Sidebar -->
     <div class="flex">
-      <aside
-        id="sidebar"
-        class="bg-white p-5 pt-16 shadow-md h-screen fixed md:relative hidden md:block transition-transform transform md:translate-x-0 md:hidden-sidebar"
-        style="width: 270px; height: 100%; right: 0"
-      >
-        <button class="close-btn" onclick="toggleSidebar()">×</button>
+      <aside id="sidebar"
+      class="bg-white p-5 shadow-md h-screen md:h-screen fixed md:relative hidden md:block transition-transform -translate-x-full md:translate-x-0 w-64 overflow-hidden">
+      <img src="./assets/img/ENSUITELogo.png" width="198" height="45" alt="ENSUITE Logo" />
+      <ul class="list-none p-0 py-12">
+        <a href="/acegpt/chat.html">
+          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+            ACE GPT
+            <img src="./assets/img/ACE GPT.png" width="24px" height="24px" alt="ACE GPT Icon" />
+          </li>
+        </a>
+        <a href="/studybuddy/studyBuddyAI.html">
+          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+            Study Buddy AI
+            <img src="./assets/img/Study Buddy Vector.png" width="24px" height="24px" alt="Campus Cart Icon" />
+          </li>
+        </a>
+        <a href="/workspace/dashboard2.html">
+          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+            Workspace
+            <img src="./assets/img/Files Vector.png" width="24px" height="24px" alt="Workspace Icon" />
+          </li>
+        </a>
 
-        <ul class="list-none p-0 h-full">
-          <li
-            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-            onclick="openTab('ace-gpt', this)"
-          >
-            <img
-              src="./assets/img/ACE GPT.png"
-              width="24px"
-              height="24px"
-              alt=""
-            />ACE GPT
+        <a href="./studyBuddyAI.html">
+          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+            Campus Cart
+            <img src="./assets/img/Campus.png" width="24px" height="24px" alt="Student Hub Icon" />
           </li>
-          <li
-            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-            onclick="openTab('campus-cart', this)"
-          >
-            <img
-              src="./assets/img/Campus.png"
-              width="24px"
-              height="24px"
-              alt=""
-            />Campus Cart
+        </a>
+        <a href="/acegpt/new-chat.html">
+          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+            Serenity
+            <img src="./assets/img/Mind Vector.png" width="24px" height="24px" alt="Uni-Link Icon" />
           </li>
-          <li
-            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-            onclick="openTab('workspace', this)"
-          >
-            <img
-              src="./assets/img/Files Vector.png"
-              width="24px"
-              height="24px"
-              alt=""
-            />Workspace
+        </a>
+        <a href="/acegpt/new-chat.html">
+
+          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+            Uni Link
+            <img src="./assets/img/Chat Vector.png" width="24px" height="24px" alt="EasyFit Icon" />
           </li>
-          <li
-            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-            onclick="openTab('student-hub', this)"
-          >
-            <img
-              src="./assets/img/Student Vector.png"
-              width="24px"
-              height="24px"
-              alt=""
-            />Student Hub
-          </li>
-          <li
-            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-            onclick="openTab('uni-link', this)"
-          >
-            <img
-              src="./assets/img/Chat Vector.png"
-              width="24px"
-              height="24px"
-              alt=""
-            />Uni-Link
-          </li>
-          <li
-            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-            onclick="openTab('easyfit', this)"
-          >
-            <img
-              src="./assets/img/Heart Vector.png"
-              width="24px"
-              height="24px"
-              alt=""
-            />EasyFit
-          </li>
-          <li
-            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-            onclick="openTab('serenity', this)"
-          >
-            <img
-              src="./assets/img/Mind Vector.png"
-              width="24px"
-              height="24px"
-              alt=""
-            />Serenity
-          </li>
-          <li
-            class="cursor-pointer py-2 px-2 menu-item flex items-center gap-2 pb-8"
-            onclick="openTab('global-spotlight', this)"
-          >
-            <img
-              src="./assets/img/Vector.png"
-              width="24px"
-              height="24px"
-              alt=""
-            />Global Spotlight
-          </li>
-        </ul>
-      </aside>
+        </a>
+
+
+      </ul>
+    </aside>
       <div class="flex w-full">
         <div
           style="
