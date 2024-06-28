@@ -9,13 +9,6 @@
       rel="stylesheet"
     />
     <style>
-      .menu-item {
-        cursor: pointer;
-        font-size: 16px;
-        font-weight: 600;
-        padding: 13px 6px;
-      }
-
       .menu-item.active {
         background-color: #f2f2f2;
         border-radius: 8px;
@@ -58,52 +51,98 @@
   <body>
     <div class="flex">
       <!-- Sidebar -->
-      <aside id="sidebar"
-      class="bg-white p-5 shadow-md h-screen md:h-screen fixed md:relative hidden md:block transition-transform -translate-x-full md:translate-x-0 w-64 overflow-hidden">
-      <img src="./assets/img/ENSUITELogo.png" width="198" height="45" alt="ENSUITE Logo" />
-      <ul class="list-none p-0 py-12">
-        <a href="/acegpt/chat.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
-            ACE GPT
-            <img src="./assets/img/ACE GPT.png" width="24px" height="24px" alt="ACE GPT Icon" />
-          </li>
-        </a>
-        <a href="/studybuddy/studyBuddyAI.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
-            Study Buddy AI
-            <img src="./assets/img/Study Buddy Vector.png" width="24px" height="24px" alt="Campus Cart Icon" />
-          </li>
-        </a>
-        <a href="/workspace/dashboard2.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
-            Workspace
-            <img src="./assets/img/Files Vector.png" width="24px" height="24px" alt="Workspace Icon" />
-          </li>
-        </a>
+      <aside
+        id="sidebar"
+        class="bg-white p-5 shadow-md h-screen md:h-screen fixed md:relative hidden md:block transition-transform -translate-x-full md:translate-x-0 w-64 overflow-hidden"
+      >
+        <img
+          src="../assets/img/ENSUITELogo.png"
+          width="198"
+          height="45"
+          alt="ENSUITE Logo"
+        />
+        <ul class="list-none p-0 py-12">
+          <a href="/acegpt/chat.html">
+            <li
+              class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+            >
+              ACE GPT
+              <img
+                src="../assets/img/ACE GPT.png"
+                width="24px"
+                height="24px"
+                alt="ACE GPT Icon"
+              />
+            </li>
+          </a>
+          <a href="../studybuddy/studyBuddyAI.html">
+            <li
+              class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+            >
+              Study Buddy AI
+              <img
+                src="../assets/img/Study Buddy Vector.png"
+                width="24px"
+                height="24px"
+                alt="Campus Cart Icon"
+              />
+            </li>
+          </a>
+          <a href="../workspace/dashboard2.html">
+            <li
+              class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+            >
+              Workspace
+              <img
+                src="../assets/img/Files Vector.png"
+                width="24px"
+                height="24px"
+                alt="Workspace Icon"
+              />
+            </li>
+          </a>
 
-        <a href="./studyBuddyAI.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
-            Campus Cart
-            <img src="./assets/img/Campus.png" width="24px" height="24px" alt="Student Hub Icon" />
-          </li>
-        </a>
-        <a href="/acegpt/new-chat.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
-            Serenity
-            <img src="./assets/img/Mind Vector.png" width="24px" height="24px" alt="Uni-Link Icon" />
-          </li>
-        </a>
-        <a href="/acegpt/new-chat.html">
-
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
-            Uni Link
-            <img src="./assets/img/Chat Vector.png" width="24px" height="24px" alt="EasyFit Icon" />
-          </li>
-        </a>
-
-
-      </ul>
-    </aside>
+          <a href="./studyBuddyAI.html">
+            <li
+              class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+            >
+              Campus Cart
+              <img
+                src="../assets/img/Campus.png"
+                width="24px"
+                height="24px"
+                alt="Student Hub Icon"
+              />
+            </li>
+          </a>
+          <a href="/acegpt/new-chat.html">
+            <li
+              class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+            >
+              Serenity
+              <img
+                src="../assets/img/Mind Vector.png"
+                width="24px"
+                height="24px"
+                alt="Uni-Link Icon"
+              />
+            </li>
+          </a>
+          <a href="/acegpt/new-chat.html">
+            <li
+              class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+            >
+              Uni Link
+              <img
+                src="../assets/img/Chat Vector.png"
+                width="24px"
+                height="24px"
+                alt="EasyFit Icon"
+              />
+            </li>
+          </a>
+        </ul>
+      </aside>
       <div class="flex-col md:flex-row h-full w-full">
         <!-- Header -->
         <header class="bg-white shadow-md py-3 md:mx-16">
@@ -111,13 +150,13 @@
             <h2 class="text-left text-xl font-bold">ACE GPT</h2>
             <div class="flex gap-4 items-center justify-between">
               <img
-                src="./assets/img/Bell Vector.png"
+                src="../assets/img/Bell Vector.png"
                 width="24px"
                 height="24px"
                 alt="Bell Icon"
               />
               <img
-                src="./assets/img/Profile Avatar.png"
+                src="../assets/img/Profile Avatar.png"
                 width="44px"
                 height="44px"
                 alt="Profile"
@@ -128,7 +167,7 @@
                 onclick="toggleSidebar()"
               >
                 <img
-                  src="./assets/img/align-justify.svg"
+                  src="../assets/img/align-justify.svg"
                   class="text-white"
                   width="30px"
                   height="30px"
@@ -145,7 +184,7 @@
           >
             <div class="flex items-center gap-3">
               <img
-                src="./assets/img/ACE GPT Logo.png"
+                src="../assets/img/ACE GPT Logo.png"
                 w-14
                 style="height: 53px"
                 alt=""
@@ -159,7 +198,7 @@
               <!-- Chat Bubbles -->
               <div style="color: #b5b5b5" class="flex items-center space-x-4">
                 <img
-                  src="./assets/img/image 7.png"
+                  src="../assets/img/image 7.png"
                   class="w-10 h-10 rounded-full"
                   alt="User Avatar"
                 />
@@ -169,7 +208,7 @@
               </div>
               <div class="flex items-start space-x-4">
                 <img
-                  src="./assets/img/ACE GPT Logo.png"
+                  src="../assets/img/ACE GPT Logo.png"
                   class="w-10 h-10 rounded-full"
                   alt="ACE GPT Logo"
                 />
@@ -187,7 +226,7 @@
               </div>
               <div class="flex items-center space-x-4">
                 <img
-                  src="./assets/img/image 7.png"
+                  src="../assets/img/image 7.png"
                   class="w-10 h-10 rounded-full"
                   alt="User Avatar"
                 />
@@ -199,7 +238,7 @@
               </div>
               <div class="flex items-start space-x-4">
                 <img
-                  src="./assets/img/ACE GPT Logo.png"
+                  src="../assets/img/ACE GPT Logo.png"
                   class="w-10 h-10 rounded-full"
                   alt="ACE GPT Logo"
                 />
@@ -236,9 +275,9 @@
                 placeholder="Click here to start typing..."
                 class="p-4 rounded-full shadow-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 outline-none md:text-xl w-full md:flex-grow"
               />
-              <a href="./aceCHAT.html">
+              <a href="/acegpt/chat.html">
                 <img
-                  src="./assets/img/right arrow.png"
+                  src="../assets/img/right arrow.png"
                   class="absolute right-8 md:bottom-4 bottom-8 h-6"
                   alt="Right Arrow Icon"
                 />
