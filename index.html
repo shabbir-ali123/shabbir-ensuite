@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Login</title>
+    <title>Ensuit</title>
 
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -19,108 +19,129 @@
       }
     </style>
   </head>
-  <body>
-    <header class="bg-white py-3">
-      <nav class="flex justify-between items-center mx-8">
-        <div>
-          <img
-            src="./assets/img/ENSUITELogo.png"
-            width="198"
-            height="45"
-            alt="ENSUITE Logo"
-          />
-        </div>
-      </nav>
-    </header>
-    <section class="flex items-center justify-center h-screen">
-      <div class="w-full max-w-2xl">
-        <div class="bg-white px-8 pt-6 pb-8 mb-4">
-          <div class="mb-4 text-center">
-            <h2 class="text-3xl font-bold mb-2.5">Log in to Ensuite</h2>
-            <p class="text-center text-sm font-bold mb-8" id="signUpPrompt">
-              Don't have an account?
-              <a
-                href="./signup/select-school.html"
-                class="text-purple-900 border-blue-800 border-b-2"
-                >Sign up now</a
-              >
-            </p>
-            <p class="text-sm font-bold mb-8 hidden" id="noAccountError">
-              We can’t find an account with that email address.
-              <a href="#" class="text-purple-900 border-blue-800 border-b-2"
-                >Sign up now</a
-              >
-            </p>
+  <body class="xl:h-screen xl:overflow-hidden">
+    <!-- account information page  -->
+
+    <main class="flex flex-col h-full">
+      <header class="bg-white md:py-3">
+        <nav
+          class="flex flex-col md:flex-row justify-center md:justify-between items-center mx-4 md:mx-8 py-4"
+        >
+          <div>
+            <img
+              src="../assets/img/ENSUITELogo.png"
+              width="198"
+              height="45"
+              alt="ENSUITE Logo"
+            />
           </div>
-          <form id="loginForm">
-            <div class="mb-4">
-              <input
-                class="appearance-none bg-gray-200 border rounded-full w-full py-4 px-6 text-xl text-[#ADADAD] mb-4 leading-tight focus:outline-none focus:-outline"
-                style="background-color: #f3f3f3"
-                id="email"
-                type="email"
-                placeholder="Email"
-              />
-              <p class="text-red-500 text-xs italic hidden" id="emailError">
-                Please enter a valid email.
-              </p>
-            </div>
-            <div class="mb-6">
-              <div class="relative">
-                <input
-                  class="appearance-none bg-gray-100 border rounded-full w-full py-4 px-6 text-xl text-[#ADADAD] mb-4 leading-tight focus:outline-none focus:-outline pr-10"
-                  style="background-color: #f3f3f3"
-                  id="password"
-                  type="password"
-                  placeholder="Password"
-                />
-                <span
-                  class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
-                  onclick="togglePassword()"
-                >
-                  <i class="fas fa-eye text-gray-500" id="eyeIcon"></i>
-                </span>
-              </div>
-              <p class="text-red-500 text-xs italic hidden" id="passwordError">
-                The password you entered was incorrect
-              </p>
+        </nav>
+      </header>
+      <section class="flex items-center justify-center flex-grow px-4">
+        <div class="w-full max-w-2xl">
+          <div class="md:px-8 md:pt-6 pb-8 mb-4">
+            <div class="mb-4 text-center">
+              <h2 class="md:text-3xl text-2xl font-bold mb-2.5">
+                Log in to Ensuite
+              </h2>
               <p
-                style="color: #5e5e5e"
-                class="text-right font-bold hover:text-blue-800"
+                class="text-center text-sm md:font-bold mb-8"
+                id="signUpPrompt"
               >
+                Don't have an account?
                 <a
-                  href="#"
-                  class="border-b border-black no-underline"
-                  style="color: #5e5e5e"
-                  >Forgot?</a
+                  href="./signup/select-school.html"
+                  class="text-purple-900 border-blue-800 border-b-2"
                 >
+                  Sign up now
+                </a>
+              </p>
+              <p class="text-sm font-bold mb-8 hidden" id="noAccountError">
+                We can’t find an account with that email address.
+                <a href="#" class="text-purple-900 border-blue-800 border-b-2">
+                  Sign up now
+                </a>
               </p>
             </div>
-            <div class="flex items-center justify-center">
-              <a href="./home.html">
-                <button
-                  style="background-color: #4c00ac"
-                  class="hover:bg-purple-500 text-white font-bold p-3 px-8 rounded-full focus:outline-none focus:shadow-outline"
-                  type="button"
-                  onclick="validateForm()"
+            <form id="loginForm">
+              <div class="mb-4">
+                <input
+                  class="appearance-none bg-gray-200 border-none rounded-full w-full py-4 px-6 text-xl text-[#ADADAD] mb-4 leading-tight focus:outline-none focus:-outline"
+                  style="background-color: #f3f3f3"
+                  id="email"
+                  type="email"
+                  placeholder="Email"
+                />
+                <p class="text-red-500 text-xs italic hidden" id="emailError">
+                  Please enter a valid email.
+                </p>
+              </div>
+              <div class="mb-6">
+                <div class="relative">
+                  <input
+                    class="appearance-none bg-gray-100 border-none rounded-full w-full py-4 px-6 text-xl text-[#ADADAD] mb-4 leading-tight focus:outline-none focus:-outline pr-10"
+                    style="background-color: #f3f3f3"
+                    id="password"
+                    type="password"
+                    placeholder="Password"
+                  />
+                  <span
+                    class="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                    onclick="togglePassword()"
+                  >
+                    <i class="fas fa-eye text-gray-500" id="eyeIcon"></i>
+                  </span>
+                </div>
+                <p
+                  class="text-red-500 text-xs italic hidden"
+                  id="passwordError"
                 >
-                  Login
-                </button>
-              </a>
-            </div>
-            <p
-              style="color: #8d8d8d"
-              class="mt-4 text-center text-sm font-bold"
-            >
-              Learn more about our ambassador program
-              <a style="color: #3a1569" href="#" class="border-b-2 border-black"
-                >here</a
-              >.
-            </p>
-          </form>
+                  The password you entered was incorrect
+                </p>
+                <p
+                  style="color: #5e5e5e"
+                  class="text-right font-bold hover:text-blue-800"
+                >
+                  <a
+                    href="#"
+                    class="border-b border-black no-underline"
+                    style="color: #5e5e5e"
+                  >
+                    Forgot?
+                  </a>
+                </p>
+              </div>
+              <div class="flex items-center justify-center">
+                <a href="./home.html">
+                  <button
+                    style="background-color: #4c00ac"
+                    class="hover:bg-purple-500 text-white font-bold p-3 px-8 rounded-full focus:outline-none focus:shadow-outline"
+                    type="button"
+                    onclick="validateForm()"
+                  >
+                    Login
+                  </button>
+                </a>
+              </div>
+              <p
+                style="color: #8d8d8d"
+                class="mt-4 text-center text-sm md:font-bold"
+              >
+                Learn more about our ambassador program
+                <a
+                  style="color: #3a1569"
+                  href="#"
+                  class="border-b-2 border-blue-800"
+                >
+                  here
+                </a>
+                .
+              </p>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
     <script>
       function validateForm() {
