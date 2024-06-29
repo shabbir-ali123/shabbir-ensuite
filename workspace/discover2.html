@@ -9,95 +9,189 @@
     />
     <title>Document</title>
   </head>
-  <body>
-    <!-- headedr -->
-    <header class="bg-white shadow-md py-3">
-      <nav class="flex justify-between items-center mx-8">
-        <div>
-          <img
-            src="../assets/img/ENSUITELogo.png"
-            width="198"
-            height="45"
-            alt="ENSUITE Logo"
-          />
-        </div>
-        <div class="flex gap-4 items-center">
-          <img
-            src="../assets/img/Bell Vector.png"
-            width="24px"
-            height="24px"
-            alt=""
-          />
-          <img
-            src="../assets/img/Profile Avatar.png"
-            width="44px"
-            height="44px"
-            alt="profile"
-          />
-          <button
-            id="menu-btn"
-            class="md:hidden border-2 border-solid-purple text-white px-2 py-2 rounded-lg"
-            onclick="toggleSidebar()"
-          >
-            <img
-              src="../assets/img/align-justify.svg"
-              class="text-white"
-              width="30px"
-              height="30px"
-              alt="ENSUITE Logo"
-            />
-          </button>
-        </div>
-      </nav>
-    </header>
+  <style>
+    .menu-item.active {
+      background-color: #f2f2f2;
+      border-radius: 8px;
+      padding: 13px 6px;
+      margin: 3px 0px;
+      color: black;
+    }
+
+    .close-btn {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      .close-btn {
+        display: block;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        height: 30px;
+        width: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgb(48, 79, 255);
+        border-radius: 50%;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      #sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+      #sidebar.hidden {
+        transform: translateX(0);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .step-line {
+        height: 2px;
+        width: 70px;
+      }
+
+      .step-indicator {
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flex">
     <!-- Sidebar -->
-    <div class="flex">
-      <aside id="sidebar"
-      class="bg-white p-5 shadow-md h-screen md:h-screen fixed md:relative hidden md:block transition-transform -translate-x-full md:translate-x-0 w-64 overflow-hidden">
-      <img src="./assets/img/ENSUITELogo.png" width="198" height="45" alt="ENSUITE Logo" />
+    <aside
+      id="sidebar"
+      class="bg-white p-5 shadow-md h-screen md:h-screen fixed md:relative hidden md:block transition-transform -translate-x-full md:translate-x-0 w-64 overflow-hidden"
+    >
+      <img
+        src="/assets/img/ENSUITELogo.png"
+        width="198"
+        height="45"
+        alt="ENSUITE Logo"
+      />
       <ul class="list-none p-0 py-12">
         <a href="/acegpt/chat.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+          <li
+            class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+          >
             ACE GPT
-            <img src="./assets/img/ACE GPT.png" width="24px" height="24px" alt="ACE GPT Icon" />
+            <img
+              src="/assets/img/ACE GPT.png"
+              width="24px"
+              height="24px"
+              alt="ACE GPT Icon"
+            />
           </li>
         </a>
         <a href="/studybuddy/studyBuddyAI.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+          <li
+            class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+          >
             Study Buddy AI
-            <img src="./assets/img/Study Buddy Vector.png" width="24px" height="24px" alt="Campus Cart Icon" />
+            <img
+              src="/assets/img/Study Buddy Vector.png"
+              width="24px"
+              height="24px"
+              alt="Campus Cart Icon"
+            />
           </li>
         </a>
-        <a href="/workspace/dashboard2.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+        <a href="../view/dashboard.html">
+          <li
+            class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+          >
             Workspace
-            <img src="./assets/img/Files Vector.png" width="24px" height="24px" alt="Workspace Icon" />
+            <img
+              src="/assets/img/Files Vector.png"
+              width="24px"
+              height="24px"
+              alt="Workspace Icon"
+            />
           </li>
         </a>
 
-        <a href="./studyBuddyAI.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+        <a href="/studyBuddyAI.html">
+          <li
+            class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+          >
             Campus Cart
-            <img src="./assets/img/Campus.png" width="24px" height="24px" alt="Student Hub Icon" />
+            <img
+              src="/assets/img/Campus.png"
+              width="24px"
+              height="24px"
+              alt="Student Hub Icon"
+            />
           </li>
         </a>
         <a href="/acegpt/new-chat.html">
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+          <li
+            class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+          >
             Serenity
-            <img src="./assets/img/Mind Vector.png" width="24px" height="24px" alt="Uni-Link Icon" />
+            <img
+              src="/assets/img/Mind Vector.png"
+              width="24px"
+              height="24px"
+              alt="Uni-Link Icon"
+            />
           </li>
         </a>
         <a href="/acegpt/new-chat.html">
-
-          <li class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8">
+          <li
+            class="menu-item cursor-pointer py-2 px-2 font-bold flex items-center justify-between pb-8"
+          >
             Uni Link
-            <img src="./assets/img/Chat Vector.png" width="24px" height="24px" alt="EasyFit Icon" />
+            <img
+              src="/assets/img/Chat Vector.png"
+              width="24px"
+              height="24px"
+              alt="EasyFit Icon"
+            />
           </li>
         </a>
-
-
       </ul>
     </aside>
+
+    <!-- Main Content Area -->
+    <div class="flex-col md:flex-row h-full w-full">
+      <!-- Header -->
+      <header class="bg-white shadow-md py-3 md:mx-16">
+        <nav class="flex justify-between items-center mx-4 md:mx-8">
+          <h2 class="text-left md:text-xl font-bold">Workspace</h2>
+          <div class="flex gap-4 items-center">
+            <img
+              src="/assets/img/Bell Vector.png"
+              width="24px"
+              height="24px"
+              alt="Bell Icon"
+            />
+            <img
+              src="/assets/img/Profile Avatar.png"
+              width="44px"
+              height="44px"
+              alt="Profile"
+            />
+            <button
+              id="menu-btn"
+              class="md:hidden border-2 border-purple-500 text-white px-2 py-2 rounded-lg"
+              onclick="toggleSidebar()"
+            >
+              <img
+                src="/assets/img/align-justify.svg"
+                width="30px"
+                height="30px"
+                alt="Menu Icon"
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+
       <!-- content -->
       <div class="flex w-full">
         <div
@@ -756,5 +850,6 @@
         </div>
       </div>
     </div>
+  </div>
   </body>
 </html>
